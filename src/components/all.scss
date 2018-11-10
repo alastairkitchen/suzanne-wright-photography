@@ -28,3 +28,15 @@ body {
     font-size: 20px;
     letter-spacing: 2px;
 }
+
+@media only screen and (max-width: 600px) {
+    
+    .main__title {
+        font-size: 22px;
+        letter-spacing: 10px;
+    }
+
+    .main__paragraph {
+        font-size: 14px;
+    }
+}
