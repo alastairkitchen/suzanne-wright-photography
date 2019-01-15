@@ -1,12 +1,14 @@
 import React from "react";
-import Navigation from "./Navigation";
+import SiteHeader from "../header";
+import Footer from "../footer";
 
-import "../scss/index.scss";
+import "../../scss/index.scss";
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Navigation />
+    <SiteHeader />
     <div>{children}</div>
+    <Footer />
   </div>
 );
 

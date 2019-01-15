@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../components/layout";
+import SiteLayout from "../components/layout/siteLayout";
 
 export default class Gallery1 extends React.Component {
   render() {
     return (
-      <Layout>
+      <SiteLayout>
         <div>Gallery 1</div>
-      </Layout>
+      </SiteLayout>
     );
   }
 }

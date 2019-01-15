@@ -1,4 +1,7 @@
-@import "./foundation/_normalize";
-@import "./foundation/_variables";
-@import "./foundation/_layout";
-@import "./foundation/_typography";
+@import "./base/normalize";
+@import "./base/variables";
+@import "./base/layout";
+@import "./base/typography";
+
+// components
+@import "./components/siteHeader";

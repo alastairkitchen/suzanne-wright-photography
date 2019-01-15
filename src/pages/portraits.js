@@ -1,11 +1,11 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 
-export default class IndexPage extends React.Component {
+export default class Portraits extends React.Component {
   render() {
     return (
       <SiteLayout>
-        <div>Homepage</div>
+        <div>Portraits</div>
       </SiteLayout>
     );
   }
