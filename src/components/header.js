@@ -1,6 +1,8 @@
 import React from "React";
 import Navigation from "./navigation";
 import HamburgerMenu from "./hamburgerMenu";
+import { connect } from "react-redux";
+import { openMenu, toggleMenu } from "../actions/app";
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,11 +16,11 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    document.querySelector("html").classList.add("menu-open");
+    //document.querySelector("html").classList.add("menu-open");
   }
 
   openHamburgerMenu() {
-    // add redux to site
+    this.props.toggleMenu();
   }
 
   render() {
@@ -37,4 +39,13 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => {
+  return { toggleMenu: () => dispatch(toggleMenu()) };
+};
+
+const VisibleHeader = connect(
+  null,
+  mapDispatchToProps
+)(Header);
+
+export default VisibleHeader;
