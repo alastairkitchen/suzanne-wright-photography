@@ -1,0 +1,21 @@
+// ----------------------------------------
+// Mobile header
+// ----------------------------------------
+
+.mobile-header {
+  display: block;
+  text-align: center;
+  padding: 0 20px;
+  transform: translatex(0); // menu open animation
+  transition: transform $menu-transition ease; // menu open animation
+}
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen740) {
+  .mobile-header {
+    display: none;
+  }
+}

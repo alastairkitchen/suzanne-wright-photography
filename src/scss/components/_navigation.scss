@@ -1,0 +1,33 @@
+// ----------------------------------------
+// Navigation
+// ----------------------------------------
+
+.navigation {
+  list-style: none;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.navigation__list {
+  padding: 8px 0;
+
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    color: $darkGrey;
+  }
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen740) {
+  .navigation {
+    text-align: center;
+  }
+}

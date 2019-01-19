@@ -5,11 +5,11 @@ import Footer from "../footer";
 import "../../scss/index.scss";
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <React.Fragment>
     <SiteHeader />
-    <div>{children}</div>
+    <main className="site-main">{children}</main>
     <Footer />
-  </div>
+  </React.Fragment>
 );
 
 export default TemplateWrapper;

@@ -3,12 +3,41 @@
 // ----------------------------------------
 
 .site-header {
-  text-align: center;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  transform: translatex(-100%);
+  transition: transform $menu-transition ease;
 }
+
+// mobile menu background
+.site-header:after {
+  opacity: 0;
+  transition: opacity $menu-transition 0.2s ease;
+}
+
+.site-header__title {
+  padding-left: 40px;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
 
 // ----------------------------------------
 // Media queries
 // ----------------------------------------
 
 @include mq($from: screen740) {
+  .site-header {
+    text-align: center;
+    display: block;
+  }
+
+  .site-header__title {
+    padding-left: 0;
+  }
 }

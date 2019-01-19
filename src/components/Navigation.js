@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 const NavLink = props => (
-  <li>
+  <li className="navigation__list">
     <Link to={props.to}>{props.children}</Link>
   </li>
 );
