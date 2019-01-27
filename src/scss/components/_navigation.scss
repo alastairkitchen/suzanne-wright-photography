@@ -29,5 +29,12 @@
 @include mq($from: screen740) {
   .navigation {
     text-align: center;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation__list {
+    margin: 0 5px;
   }
 }

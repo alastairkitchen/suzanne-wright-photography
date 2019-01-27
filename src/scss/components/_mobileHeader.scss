@@ -10,6 +10,11 @@
   transition: transform $menu-transition ease; // menu open animation
 }
 
+.mobile-header__close-bg {
+  opacity: 0;
+  transition: opacity $menu-transition 0.2s ease;
+}
+
 // ----------------------------------------
 // Media queries
 // ----------------------------------------

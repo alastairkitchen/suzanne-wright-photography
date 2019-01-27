@@ -11,12 +11,7 @@
   width: 350px;
   transform: translatex(-100%);
   transition: transform $menu-transition ease;
-}
-
-// mobile menu background
-.site-header:after {
-  opacity: 0;
-  transition: opacity $menu-transition 0.2s ease;
+  background-color: $white;
 }
 
 .site-header__title {
@@ -33,8 +28,12 @@
 
 @include mq($from: screen740) {
   .site-header {
-    text-align: center;
     display: block;
+    position: relative;
+    transform: translateX(0);
+    text-align: center;
+    width: auto;
+    transition: unset;
   }
 
   .site-header__title {

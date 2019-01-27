@@ -2,7 +2,7 @@ import React from "React";
 import Navigation from "./navigation";
 import HamburgerMenu from "./hamburgerMenu";
 import { connect } from "react-redux";
-import { openMenu, toggleMenu } from "../actions/app";
+import { toggleMenu, closeMenu } from "../actions/app";
 
 class Header extends React.Component {
   constructor(props) {
@@ -13,10 +13,19 @@ class Header extends React.Component {
     };
 
     this.openHamburgerMenu = this.openHamburgerMenu.bind(this);
+    this.htmlElement = "";
   }
 
   componentDidMount() {
-    //document.querySelector("html").classList.add("menu-open");
+    this.htmlElement = document.querySelector("html");
+  }
+
+  componentDidUpdate() {
+    if (this.htmlElement && this.props.menuOpen === true) {
+      this.htmlElement.classList.add("menu-open");
+    } else {
+      this.htmlElement.classList.remove("menu-open");
+    }
   }
 
   openHamburgerMenu() {
@@ -30,6 +39,10 @@ class Header extends React.Component {
           <HamburgerMenu openMenu={this.openHamburgerMenu} />
           <h2>Suzanne Wright</h2>
         </header>
+        <div
+          className="mobile-header__close-bg"
+          onClick={this.props.closeMenu}
+        />
         <header className="site-header">
           <h2 className="site-header__title">Suzanne Wright</h2>
           <Navigation />
@@ -39,12 +52,19 @@ class Header extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  menuOpen: state.app.menuOpen
+});
+
 const mapDispatchToProps = dispatch => {
-  return { toggleMenu: () => dispatch(toggleMenu()) };
+  return {
+    toggleMenu: () => dispatch(toggleMenu()),
+    closeMenu: () => dispatch(closeMenu())
+  };
 };
 
 const VisibleHeader = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Header);
 
