@@ -6,6 +6,9 @@ export default class IndexPage extends React.Component {
     return (
       <SiteLayout>
         <div>Homepage</div>
+        <img src="https://via.placeholder.com/468x200" />
+        <img src="https://via.placeholder.com/468x200" />
+        <img src="https://via.placeholder.com/468x200" />
       </SiteLayout>
     );
   }

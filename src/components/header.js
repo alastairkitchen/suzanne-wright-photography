@@ -44,6 +44,12 @@ class Header extends React.Component {
           onClick={this.props.closeMenu}
         />
         <header className="site-header">
+          <button
+            className="site-header__close-btn btn btn--close"
+            onClick={this.props.closeMenu}
+          >
+            X
+          </button>
           <h2 className="site-header__title">Suzanne Wright</h2>
           <Navigation />
         </header>

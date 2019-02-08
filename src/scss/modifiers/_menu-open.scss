@@ -3,6 +3,8 @@
 // ----------------------------------------
 
 html.menu-open {
+  overflow-x: hidden;
+
   .site-header {
     transform: translatex(0);
   }

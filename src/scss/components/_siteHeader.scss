@@ -6,16 +6,23 @@
   text-align: left;
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   width: 350px;
   transform: translatex(-100%);
   transition: transform $menu-transition ease;
   background-color: $white;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 .site-header__title {
   padding-left: 40px;
+}
+
+.site-header__close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
 // ----------------------------------------
