@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "./navigation";
-import HamburgerMenu from "./hamburgerMenu";
+import Navigation from "../components/navigation";
+import HamburgerMenu from "../components/hamburgerMenu";
 import { connect } from "react-redux";
 import { toggleMenu, closeMenu } from "../actions/app";
 
