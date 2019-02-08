@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import Navigation from "./navigation";
 import HamburgerMenu from "./hamburgerMenu";
 import { connect } from "react-redux";
