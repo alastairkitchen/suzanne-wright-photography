@@ -13,10 +13,10 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/img`,
-        name: "images"
+        name: `src`,
+        path: `${__dirname}/src/imageGalleries`
       }
     },
     "gatsby-plugin-sharp",
