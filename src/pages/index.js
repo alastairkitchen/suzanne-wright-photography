@@ -14,7 +14,10 @@ export default ({ data }) => {
   return (
     <SiteLayout>
       {images(
-        data.allFile.edges[0].node.childMarkdownRemark.frontmatter.galleryImages
+        data
+          ? data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+              .galleryImages
+          : false
       )}
 
       <div>Homepage</div>
