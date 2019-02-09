@@ -7,5 +7,7 @@ description: >-
   lorem test lorem test lorem test.
 galleryImages:
   - /img/products-full-width.jpg
+  - /img/products-grid2.jpg
+  - /img/chemex.jpg
 ---
 
