@@ -15,7 +15,7 @@ export default ({ data }) => {
     <SiteLayout>
       {images(
         data.allFile !== null
-          ? data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+          ? data.allFile.edges[2].node.childMarkdownRemark.frontmatter
               .galleryImages
           : false
       )}
