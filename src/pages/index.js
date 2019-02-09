@@ -11,6 +11,7 @@ const images = images => {
 };
 
 export default ({ data }) => {
+  console.dir(data);
   return (
     <SiteLayout>
       {images(
