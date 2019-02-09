@@ -30,15 +30,13 @@ export default ({ data }) => {
   );
 };
 
+//dir: {
+//   regex: "/Applications/MAMP/htdocs/www.suzannewrightphotographer.internal/src/imageGalleries/"
+// }
+
 export const query = graphql`
   query {
-    allFile(
-      filter: {
-        dir: {
-          regex: "/Applications/MAMP/htdocs/www.suzannewrightphotographer.internal/src/imageGalleries/"
-        }
-      }
-    ) {
+    allFile(filter: {}) {
       edges {
         node {
           name
