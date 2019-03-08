@@ -1,10 +1,23 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
+import PageListItem from "../components/pageListItem";
 
-const pageListItem = page => {
-  if (page) {
-    return test;
+const pageListItems = data => {
+  if (data && data.allMarkdownRemark) {
+    if (data.allMarkdownRemark.edges.length > 0) {
+      let pageData = data.allMarkdownRemark.edges;
+      let items = pageData.map((page, i) => {
+        return (
+          <PageListItem
+            key={i}
+            title={page.node.frontmatter.title}
+            coverImage={page.node.frontmatter.coverImage}
+          />
+        );
+      });
+      return items;
+    }
   }
 };
 
@@ -12,7 +25,8 @@ export default ({ data }) => {
   console.dir(data);
   return (
     <SiteLayout>
-      <div>Homepage</div>
+      {pageListItems(data)}
+
       <img src="https://via.placeholder.com/468x200" />
       <img src="https://via.placeholder.com/468x200" />
       <img src="https://via.placeholder.com/468x200" />
