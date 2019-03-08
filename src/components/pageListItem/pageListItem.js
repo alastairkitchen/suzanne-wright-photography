@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 const PageListItem = props => {
   let styles = {
@@ -6,9 +7,11 @@ const PageListItem = props => {
   };
 
   return (
-    <div className="page-list-item" style={styles}>
-      <p>{props.title}</p>
-    </div>
+    <li className="page-list-item" style={styles}>
+      <Link to={props.url}>
+        <p>{props.title}</p>
+      </Link>
+    </li>
   );
 };
 export default PageListItem;

@@ -1,20 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
-import PageListItem from "../components/pageListItem";
+import PageListItem from "../components/pageListItem/pageListItem";
 
 const pageListItems = data => {
   if (data && data.allMarkdownRemark) {
     if (data.allMarkdownRemark.edges.length > 0) {
       let pageData = data.allMarkdownRemark.edges;
       let items = pageData.map((page, i) => {
-        return (
-          <PageListItem
-            key={i}
-            title={page.node.frontmatter.title}
-            coverImage={page.node.frontmatter.coverImage}
-          />
-        );
+        return <PageListItem key={i} {...page.node.frontmatter} />;
       });
       return items;
     }
@@ -25,7 +19,7 @@ export default ({ data }) => {
   console.dir(data);
   return (
     <SiteLayout>
-      {pageListItems(data)}
+      <ul className="page-list-items">{pageListItems(data)}</ul>
 
       <img src="https://via.placeholder.com/468x200" />
       <img src="https://via.placeholder.com/468x200" />
@@ -49,6 +43,8 @@ export const query = graphql`
             date
             description
             galleryImages
+            url
+            coverImage
             _PARENT
           }
         }
