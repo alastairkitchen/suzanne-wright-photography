@@ -35,8 +35,6 @@ export const query = graphql`
             date
             description
             galleryImages
-            url
-            coverImage
             _PARENT
           }
         }
