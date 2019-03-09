@@ -28,6 +28,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-offline",
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };
