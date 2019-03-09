@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
+import PageListItem from "../components/pageListItem/pageListItem";
 
-const images = images => {
-  if (images) {
-    return images.map((image, i) => {
-      return <img key={i} src={image} />;
-    });
+const pageListItems = data => {
+  if (data && data.allMarkdownRemark) {
+    if (data.allMarkdownRemark.edges.length > 0) {
+      let pageData = data.allMarkdownRemark.edges;
+      let items = pageData.map((page, i) => {
+        return <PageListItem key={i} {...page.node.frontmatter} />;
+      });
+      return items;
+    }
   }
 };
 
@@ -14,14 +19,8 @@ export default ({ data }) => {
   console.dir(data);
   return (
     <SiteLayout>
-      {images(
-        data.allFile !== null
-          ? data.allFile.edges[2].node.childMarkdownRemark.frontmatter
-              .galleryImages
-          : false
-      )}
+      <ul className="page-list-items">{pageListItems(data)}</ul>
 
-      <div>Homepage</div>
       <img src="https://via.placeholder.com/468x200" />
       <img src="https://via.placeholder.com/468x200" />
       <img src="https://via.placeholder.com/468x200" />
@@ -32,25 +31,21 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: {
-        dir: {
-          regex: "/Applications/MAMP/htdocs/www.suzannewrightphotographer.internal/src/imageGalleries/"
-        }
-      }
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "image-gallery" } } }
     ) {
       edges {
         node {
-          name
-          dir
-          childMarkdownRemark {
-            id
-            html
-            frontmatter {
-              title
-              templateKey
-              galleryImages
-            }
+          id
+          frontmatter {
+            title
+            templateKey
+            date
+            description
+            galleryImages
+            url
+            coverImage
+            _PARENT
           }
         }
       }

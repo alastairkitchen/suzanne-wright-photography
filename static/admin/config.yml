@@ -19,8 +19,10 @@ collections:
           default: "image-gallery",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover Image", name: "coverImage", widget: "image" }
       - label: "Gallery"
         name: "galleryImages"
         widget: "list"

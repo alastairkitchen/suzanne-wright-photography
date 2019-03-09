@@ -1,0 +1,24 @@
+// ----------------------------------------
+// Page list item
+// ----------------------------------------
+
+.page-list-items {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.page-list-item {
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
