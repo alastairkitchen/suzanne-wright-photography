@@ -20,11 +20,6 @@ export default ({ data }) => {
   return (
     <SiteLayout>
       <ul className="page-list-items">{pageListItems(data)}</ul>
-
-      <img src="https://via.placeholder.com/468x200" />
-      <img src="https://via.placeholder.com/468x200" />
-      <img src="https://via.placeholder.com/468x200" />
-      <div>Hello world</div>
     </SiteLayout>
   );
 };
