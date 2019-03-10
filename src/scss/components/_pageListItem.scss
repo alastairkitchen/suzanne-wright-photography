@@ -4,8 +4,12 @@
 
 .page-list-items {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-columns: 100%;
+  grid-template-rows: 300px;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  padding: 0 15px;
+  list-style: none;
 }
 
 .page-list-item {
@@ -13,6 +17,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.page-list-item__anchor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 // ----------------------------------------
@@ -22,3 +35,9 @@
 // ----------------------------------------
 // Media queries
 // ----------------------------------------
+
+@include mq($from: screen740) {
+  .page-list-items {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}

@@ -8,7 +8,7 @@ const PageListItem = props => {
 
   return (
     <li className="page-list-item" style={styles}>
-      <Link to={props.url}>
+      <Link to={props.url} className="page-list-item__anchor">
         <p>{props.title}</p>
       </Link>
     </li>
