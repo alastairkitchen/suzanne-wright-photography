@@ -1,10 +1,15 @@
 import React from "react";
 import Img from "gatsby-image";
+// Helpers
+import { filterImagesByGallery } from "../../helpers/imageGalleryHelper";
 
-const imageGallery = data => {
-  if (data) {
-    let imageElements = data.images.edges.map(image => {
-      console.dir(image);
+const imageGallery = props => {
+  // filter all images by name = any of the image gallery names
+  filterImagesByGallery(props.galleryImages, props.allImages);
+
+  if (props.allImages) {
+    let imageElements = props.allImages.edges.map(image => {
+      //   console.dir(image);
       return (
         <Img
           key={image.node.id}
@@ -16,7 +21,7 @@ const imageGallery = data => {
     return imageElements;
   }
 
-  // no data? return null
+  // no props? return null
   return null;
 };
 
