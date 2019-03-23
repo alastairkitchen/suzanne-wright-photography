@@ -1,39 +1,23 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 import Img from "gatsby-image";
-import ImageGallery from "../components/imageGallery/imageGallery";
 
-const Family = ({ data }) => {
+const Test = ({ data }) => {
+  console.dir(data);
   return (
     <SiteLayout>
       {/* <Img
-        fluid={data.images.childImageSharp.fluid}
-        alt="Gatsby Docs are awesome"
-      /> */}
-      <ImageGallery {...data} />
+      fluid={}
+      alt="Gatsby Docs are awesome"
+    /> */}
     </SiteLayout>
   );
 };
 
-export default Family;
+export default Test;
 
 export const query = graphql`
   query {
-    images: allFile(
-      filter: { extension: { regex: "/(jpg)|(png)|(gif)|(jpeg)/" } }
-    ) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
     familyImages: allMarkdownRemark(
       filter: {
         frontmatter: {
@@ -53,6 +37,30 @@ export const query = graphql`
             galleryImages
             url
             coverImage
+            _PARENT
+          }
+        }
+      }
+    }
+    images: allFile(
+      filter: { extension: { regex: "/(jpg)|(png)|(gif)|(jpeg)/" } }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            id
+            fixed {
+              base64
+              tracedSVG
+              aspectRatio
+              width
+              height
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              originalName
+            }
           }
         }
       }
