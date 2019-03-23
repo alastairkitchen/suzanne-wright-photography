@@ -9,6 +9,6 @@ description: >-
   nostrud exe
 coverImage: /img/chemex.jpg
 galleryImages:
-  - /img/flavor_wheel.jpg
+  - /img/chris-haslam.jpg
 ---
 
