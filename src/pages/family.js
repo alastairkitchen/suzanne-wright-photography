@@ -1,15 +1,10 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
-import Img from "gatsby-image";
 import ImageGallery from "../components/imageGallery/imageGallery";
 
 const Family = ({ data }) => {
   return (
     <SiteLayout>
-      {/* <Img
-      fluid={data.images.childImageSharp.fluid}
-      alt="Gatsby Docs are awesome"
-      /> */}
       <ImageGallery {...data} />
     </SiteLayout>
   );

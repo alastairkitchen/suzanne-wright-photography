@@ -4,21 +4,27 @@ import Img from "gatsby-image";
 import { filterImagesByGallery } from "../../helpers/imageGalleryHelper";
 
 const imageGallery = props => {
-  // filter all images by name = any of the image gallery names
-  filterImagesByGallery(props.galleryImages, props.allImages);
+  // filter image data by gallery
+  let galleryImages = filterImagesByGallery(
+    props.galleryImages,
+    props.allImages
+  );
 
-  if (props.allImages) {
-    let imageElements = props.allImages.edges.map(image => {
-      //   console.dir(image);
-      return (
-        <Img
-          key={image.node.id}
-          fluid={image.node.childImageSharp.fluid}
-          alt="Gatsby Docs are awesome"
-        />
-      );
-    });
-    return imageElements;
+  if (galleryImages) {
+    if (galleryImages.length > 0) {
+      let imageElements = galleryImages.map(image => {
+        return (
+          <Img
+            key={image.node.id}
+            fluid={image.node.childImageSharp.fluid}
+            alt="Gatsby Docs are awesome"
+          />
+        );
+      });
+      return imageElements;
+    } else {
+      <p>No images found...</p>;
+    }
   }
 
   // no props? return null
