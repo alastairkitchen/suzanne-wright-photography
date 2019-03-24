@@ -14,14 +14,20 @@ const imageGallery = props => {
     if (galleryImages.length > 0) {
       let imageElements = galleryImages.map(image => {
         return (
-          <Img
-            key={image.node.id}
-            fluid={image.node.childImageSharp.fluid}
-            alt="Gatsby Docs are awesome"
-          />
+          <div className="image-grid__column">
+            <Img
+              className="image-grid__column-inner"
+              key={image.node.id}
+              fluid={image.node.childImageSharp.fluid}
+              alt="Gatsby Docs are awesome"
+            />
+          </div>
         );
       });
-      return imageElements;
+
+      return (
+        <div className="image-grid image-grid--3-col">{imageElements}</div>
+      );
     } else {
       return <p>No images found...</p>;
     }

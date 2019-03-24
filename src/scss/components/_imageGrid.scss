@@ -1,0 +1,44 @@
+// ----------------------------------------
+// Image grid
+// ----------------------------------------
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+// 3 column
+
+.image-grid--3-col {
+  .image-grid__column {
+    width: 100%;
+  }
+
+  .image-grid__column-inner {
+    margin: 15px;
+  }
+}
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen740) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 50%;
+    }
+  }
+}
+
+@include mq($from: screen980) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 33.333%;
+    }
+  }
+}

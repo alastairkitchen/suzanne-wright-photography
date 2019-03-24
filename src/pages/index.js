@@ -20,7 +20,7 @@ export default ({ data }) => {
   return (
     <SiteLayout>
       <ul className="page-list-items">{pageListItems(data)}</ul>
-      Hi Swaz =)
+      Now then now thennnnnn..
     </SiteLayout>
   );
 };
