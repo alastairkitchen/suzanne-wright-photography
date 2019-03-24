@@ -23,7 +23,7 @@ const imageGallery = props => {
       });
       return imageElements;
     } else {
-      <p>No images found...</p>;
+      return <p>No images found...</p>;
     }
   }
 
