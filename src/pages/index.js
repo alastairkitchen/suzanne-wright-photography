@@ -8,7 +8,9 @@ const pageListItems = data => {
     if (data.allMarkdownRemark.edges.length > 0) {
       let pageData = data.allMarkdownRemark.edges;
       let items = pageData.map((page, i) => {
-        return <PageListItem key={i} {...page.node.frontmatter} />;
+        return (
+          <PageListItem key={i} {...page.node.frontmatter} index={i + 1} />
+        );
       });
       return items;
     }
@@ -19,7 +21,7 @@ export default ({ data }) => {
   console.dir(data);
   return (
     <SiteLayout>
-      <ul className="page-list-items">{pageListItems(data)}</ul>
+      <div className="page-list">{pageListItems(data)}</div>
       Now then now thennnnnn..
     </SiteLayout>
   );
