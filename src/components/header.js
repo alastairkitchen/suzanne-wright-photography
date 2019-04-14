@@ -3,6 +3,7 @@ import Navigation from "./navigation";
 import HamburgerMenu from "./hamburgerMenu";
 import { connect } from "react-redux";
 import { toggleMenu, closeMenu } from "../actions/app";
+import logo from "../assets/svg/logo.svg";
 
 class Header extends React.Component {
   constructor(props) {
@@ -50,7 +51,9 @@ class Header extends React.Component {
           >
             X
           </button>
-          <h2 className="site-header__title">Suzanne Wright</h2>
+          <h2 className="site-header__title">
+            <img src={logo} alt="Suzanne Wright Photographer" />
+          </h2>
           <Navigation />
         </header>
       </React.Fragment>

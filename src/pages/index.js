@@ -30,7 +30,11 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "image-gallery" } } }
+      filter: {
+        frontmatter: {
+          templateKey: { regex: "/(image-gallery)|(generic-page)/" }
+        }
+      }
     ) {
       edges {
         node {
