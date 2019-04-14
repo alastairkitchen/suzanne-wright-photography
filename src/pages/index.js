@@ -27,6 +27,8 @@ export default ({ data }) => {
   );
 };
 
+// Up to here! add all images to query and transform data
+
 export const query = graphql`
   query {
     allMarkdownRemark(
