@@ -12,9 +12,9 @@ const imageGallery = props => {
 
   if (galleryImages) {
     if (galleryImages.length > 0) {
-      let imageElements = galleryImages.map(image => {
+      let imageElements = galleryImages.map((image, i) => {
         return (
-          <div className="image-grid__column">
+          <div className="image-grid__column" key={"image-gallery-" + i}>
             <Img
               className="image-grid__column-inner"
               key={image.node.id}

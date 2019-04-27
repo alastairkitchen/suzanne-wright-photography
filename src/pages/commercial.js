@@ -3,6 +3,7 @@ import SiteLayout from "../components/layout/siteLayout";
 import ImageGallery from "../components/imageGallery/imageGallery";
 
 const Commercial = ({ data }) => {
+  console.dir(data);
   return (
     <SiteLayout>
       <ImageGallery {...data} />

@@ -4,10 +4,12 @@ import SiteLayout from "../components/layout/siteLayout";
 import PageListItem from "../components/pageListItem/pageListItem";
 
 const pageListItems = data => {
-  if (data && data.allMarkdownRemark) {
-    if (data.allMarkdownRemark.edges.length > 0) {
-      let pageData = data.allMarkdownRemark.edges;
+  if (data && data.pages) {
+    if (data.pages.edges.length > 0) {
+      let pageData = data.pages.edges;
       let items = pageData.map((page, i) => {
+        //let image = getImageSrc(page.coverImage);
+
         return (
           <PageListItem key={i} {...page.node.frontmatter} index={i + 1} />
         );
@@ -31,7 +33,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    pages: allMarkdownRemark(
       filter: {
         frontmatter: {
           templateKey: { regex: "/(image-gallery)|(generic-page)/" }
@@ -50,6 +52,17 @@ export const query = graphql`
             url
             coverImage
             _PARENT
+          }
+        }
+      }
+    }
+    images: allImageSharp {
+      edges {
+        node {
+          ... on ImageSharp {
+            resize(width: 125, height: 125, rotate: 180) {
+              src
+            }
           }
         }
       }
