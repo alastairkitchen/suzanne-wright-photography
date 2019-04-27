@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 const PageListItem = props => {
   let styles = {
-    backgroundImage: `url(${props.coverImage})`
+    backgroundImage: `url(${props.bgImage})`
   };
 
   return (

@@ -1,3 +1,5 @@
+import { stripDirectoryFromFile, removeFileExtension } from "../utils/fileUtil";
+
 export const filterImagesByGallery = (galleryData, allFileData) => {
   let galleryImagesWithExtension = [];
   let galleryImagesByName = [];
@@ -9,35 +11,14 @@ export const filterImagesByGallery = (galleryData, allFileData) => {
      * e.g. ["image1.jpg","image2.jpg"]
      */
     galleryData.edges[0].node.frontmatter.galleryImages.forEach(image => {
-      const regexGetFilename = /(?<=\/)[^\/]+$/gm;
-      let str = image;
-      let matches;
-
-      while ((matches = regexGetFilename.exec(str)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width matches
-        if (matches.index === regexGetFilename.lastIndex) {
-          regexGetFilename.lastIndex++;
-        }
-
-        matches.forEach(match => {
-          galleryImagesWithExtension.push(match);
-        });
-      }
+      galleryImagesWithExtension.push(stripDirectoryFromFile(image));
     });
 
     /*
      * loop through gallery images with extension and strip out extension
      */
     galleryImagesWithExtension.forEach(image => {
-      image = image
-        .replace(".jpg", "")
-        .replace(".jpeg", "")
-        .replace(".gif", "")
-        .replace(".png", "")
-        .replace(".JPG", "")
-        .replace(".JPEG", "")
-        .replace(".GIF", "")
-        .replace(".PNG", "");
+      image = removeFileExtension(image);
       galleryImagesByName.push(image);
     });
 
@@ -52,4 +33,21 @@ export const filterImagesByGallery = (galleryData, allFileData) => {
 
   // default return false
   return false;
+};
+
+/*
+ * returns the image sharp object based on the image name that is passed in as second argument
+ * e.g. image name beach-image will return the image sharp object for beach-image
+ */
+export const getImageFromAllImageSharp = (allImageSharpImages, imageName) => {
+  let imageNameNoExtension = removeFileExtension(
+    stripDirectoryFromFile(imageName)
+  );
+  let pickedImageSharp = allImageSharpImages.edges.filter(edge => {
+    return (
+      removeFileExtension(stripDirectoryFromFile(edge.node.resize.src)) ===
+      imageNameNoExtension
+    );
+  });
+  return pickedImageSharp;
 };

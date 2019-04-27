@@ -2,16 +2,25 @@ import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
 import PageListItem from "../components/pageListItem/pageListItem";
+import { getImageFromAllImageSharp } from "../helpers/imageGalleryHelper";
 
 const pageListItems = data => {
   if (data && data.pages) {
     if (data.pages.edges.length > 0) {
       let pageData = data.pages.edges;
       let items = pageData.map((page, i) => {
-        //let image = getImageSrc(page.coverImage);
+        let bgImage = getImageFromAllImageSharp(
+          data.images,
+          page.node.frontmatter.coverImage
+        );
 
         return (
-          <PageListItem key={i} {...page.node.frontmatter} index={i + 1} />
+          <PageListItem
+            key={i}
+            {...page.node.frontmatter}
+            index={i + 1}
+            bgImage={bgImage[0].node.resize.src}
+          />
         );
       });
       return items;
@@ -60,9 +69,14 @@ export const query = graphql`
       edges {
         node {
           ... on ImageSharp {
-            resize(width: 125, height: 125, rotate: 180) {
+            resize(width: 1600, height: 800) {
               src
             }
+          }
+          original {
+            width
+            height
+            src
           }
         }
       }
