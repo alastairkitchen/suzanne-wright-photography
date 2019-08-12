@@ -1,40 +1,90 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Img from "gatsby-image";
-// Helpers
-import { filterImagesByGallery } from "../../helpers/imageGalleryHelper";
+import Modal from "../imageGallery/modal";
 
-const imageGallery = props => {
-  // filter image data by gallery
-  let galleryImages = filterImagesByGallery(
-    props.galleryImages,
-    props.allImages
-  );
+class ImageGallery extends React.Component {
 
-  if (galleryImages) {
-    if (galleryImages.length > 0) {
-      let imageElements = galleryImages.map((image, i) => {
-        return (
-          <div className="image-grid__column" key={"image-gallery-" + i}>
-            <Img
-              className="image-grid__column-inner"
-              key={image.node.id}
-              fluid={image.node.childImageSharp.fluid}
-              alt="Gatsby Docs are awesome"
-            />
-          </div>
-        );
-      });
+  constructor(props) {
+    super(props);
 
-      return (
-        <div className="image-grid image-grid--3-col">{imageElements}</div>
-      );
-    } else {
-      return <p>No images found...</p>;
+    this.renderImages = this.renderImages.bind(this);
+    this.activateModal = this.activateModal.bind(this);
+
+    this.state = {
+      showModal: false,
+      modalContent: null
     }
   }
 
-  // no props? return null
-  return null;
+  renderImages() {
+
+    if (this.props.images) {
+      if (this.props.images.length > 0) {
+        let imageElements = this.props.images.map((image, i) => {
+          return (
+            <button
+              className="image-grid__column"
+              key={"image-gallery-" + i}
+              onClick={() => this.activateModal(image)}
+            >
+              <Img
+                className="image-grid__column-inner"
+                key={image.node.id}
+                fluid={image.node.childImageSharp.fluid}
+                alt="Gatsby Docs are awesome"
+              />
+            </button>
+          );
+        });
+
+        return (
+          <div className="image-grid image-grid--3-col">{imageElements}</div>
+        );
+      } else {
+        return <p>No images found...</p>;
+      }
+    }
+
+    // no images props? return null
+    return null;
+
+  }
+
+  activateModal(image) {
+
+    let modalImage = (
+      <Img
+        className="image-grid__column-inner"
+        key={image.node.id}
+        fluid={image.node.childImageSharp.fluid}
+        alt="Gatsby Docs are awesome"
+      />
+    );
+
+
+    this.setState((state) => ({
+      showModal: !state.showModal,
+      modalContent: modalImage
+    }))
+
+  }
+
+  render() {
+
+    return (
+      <Fragment>
+        {this.renderImages()}
+        {this.state.showModal && (
+          <Modal>
+            {this.state.modalContent}
+          </Modal>
+        )}
+      </Fragment>
+
+    )
+
+  }
+
 };
 
-export default imageGallery;
+export default ImageGallery;

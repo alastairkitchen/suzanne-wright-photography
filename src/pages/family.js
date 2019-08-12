@@ -1,11 +1,19 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 import ImageGallery from "../components/imageGallery/imageGallery";
+// Helpers
+import { filterImagesByGallery } from "../helpers/imageGalleryHelper";
 
 const Family = ({ data }) => {
+  // filter image data by gallery
+  let galleryImages = filterImagesByGallery(
+    data.galleryImages,
+    data.allImages
+  );
+
   return (
     <SiteLayout>
-      <ImageGallery {...data} />
+      <ImageGallery images={galleryImages} />
     </SiteLayout>
   );
 };
