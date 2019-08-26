@@ -1,10 +1,11 @@
+const globImporter = require('node-sass-glob-importer');
+
 module.exports = {
   siteMetadata: {
     title: "Suzanne Wright Photographer"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -46,6 +47,12 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: []
+      }
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        importer: globImporter()
       }
     },
     "gatsby-plugin-netlify-cms",

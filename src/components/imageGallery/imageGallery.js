@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Img from "gatsby-image";
 import Modal from "../imageGallery/modal";
 
+
 class ImageGallery extends React.Component {
 
   constructor(props) {
@@ -9,6 +10,7 @@ class ImageGallery extends React.Component {
 
     this.renderImages = this.renderImages.bind(this);
     this.activateModal = this.activateModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 
     this.state = {
       showModal: false,
@@ -63,10 +65,16 @@ class ImageGallery extends React.Component {
 
 
     this.setState((state) => ({
-      showModal: !state.showModal,
+      showModal: true,
       modalContent: modalImage
     }))
 
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false
+    })
   }
 
   render() {
@@ -75,7 +83,9 @@ class ImageGallery extends React.Component {
       <Fragment>
         {this.renderImages()}
         {this.state.showModal && (
-          <Modal>
+          <Modal
+            closeModal={this.closeModal}
+          >
             {this.state.modalContent}
           </Modal>
         )}
