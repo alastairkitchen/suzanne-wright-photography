@@ -60,7 +60,6 @@ export const query = graphql`
             galleryImages
             url
             coverImage
-            _PARENT
           }
         }
       }
