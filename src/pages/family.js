@@ -12,7 +12,7 @@ const Family = ({ data }) => {
   );
 
   return (
-    <SiteLayout modal={<ImageGallery images={galleryImages} />}>
+    <SiteLayout contentOuter={<ImageGallery images={galleryImages} />}>
       testing
     </SiteLayout>
   );

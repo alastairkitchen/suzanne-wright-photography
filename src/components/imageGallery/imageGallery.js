@@ -82,13 +82,12 @@ class ImageGallery extends React.Component {
     return (
       <Fragment>
         {this.renderImages()}
-        {this.state.showModal && (
-          <Modal
-            closeModal={this.closeModal}
-          >
-            {this.state.modalContent}
-          </Modal>
-        )}
+        <Modal
+          showModal={this.state.showModal}
+          closeModal={this.closeModal}
+        >
+          {this.state.modalContent}
+        </Modal>
       </Fragment>
 
     )

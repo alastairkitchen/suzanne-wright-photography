@@ -9,7 +9,7 @@ const SiteLayout = (props) => (
   <React.Fragment>
     <SiteHeader />
     <main className="site-main">{props.children}</main>
-    {props.modal}
+    {props.contentOuter}
     <Footer />
   </React.Fragment>
 );
