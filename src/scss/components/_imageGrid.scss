@@ -5,6 +5,21 @@
 .image-grid {
   display: flex;
   flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.image-grid__column {
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.image-grid__button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
 }
 
 // ----------------------------------------

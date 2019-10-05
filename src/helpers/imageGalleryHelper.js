@@ -1,22 +1,23 @@
 import { stripDirectoryFromFile, removeFileExtension } from "../utils/fileUtil";
 
 export const filterImagesByGallery = (galleryData, allFileData) => {
+
   let galleryImagesWithExtension = [];
   let galleryImagesByName = [];
 
   if (galleryData.hasOwnProperty("edges")) {
     /*
-     * loop through gallery image paths and strip out directory data
-     * add results to gallery images with extension array
-     * e.g. ["image1.jpg","image2.jpg"]
-     */
+    * loop through gallery image paths and strip out directory data
+    * add results to gallery images with extension array
+    * e.g. ["image1.jpg","image2.jpg"]
+    */
     galleryData.edges[0].node.frontmatter.galleryImages.forEach(image => {
       galleryImagesWithExtension.push(stripDirectoryFromFile(image));
     });
 
     /*
-     * loop through gallery images with extension and strip out extension
-     */
+    * loop through gallery images with extension and strip out extension
+    */
     galleryImagesWithExtension.forEach(image => {
       image = removeFileExtension(image);
       galleryImagesByName.push(image);
@@ -26,6 +27,8 @@ export const filterImagesByGallery = (galleryData, allFileData) => {
       let filteredImages = allFileData.edges.filter(edge => {
         return galleryImagesByName.includes(edge.node.name);
       });
+
+      console.dir(allFileData);
 
       return filteredImages;
     }

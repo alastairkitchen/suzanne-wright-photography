@@ -30,7 +30,9 @@ export const query = graphql`
           id
           name
           childImageSharp {
-            # Specify the image processing specifications right in the query.
+            fixed(width: 1200, height: 800) {
+              ...GatsbyImageSharpFixed
+            }
             fluid(maxWidth: 600, maxHeight: 600) {
               ...GatsbyImageSharpFluid
             }

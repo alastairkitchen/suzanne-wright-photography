@@ -24,18 +24,21 @@ class ImageGallery extends React.Component {
       if (this.props.images.length > 0) {
         let imageElements = this.props.images.map((image, i) => {
           return (
-            <button
+            <div
               className="image-grid__column"
               key={"image-gallery-" + i}
               onClick={() => this.activateModal(image)}
             >
-              <Img
-                className="image-grid__column-inner"
-                key={image.node.id}
-                fluid={image.node.childImageSharp.fluid}
-                alt="Gatsby Docs are awesome"
-              />
-            </button>
+              <div className="image-grid__column-inner">
+                <Img
+                  className="image-grid__button"
+                  key={image.node.id}
+                  fluid={image.node.childImageSharp.fluid}
+                  alt="Gatsby Docs are awesome"
+                  Tag="button"
+                />
+              </div>
+            </div>
           );
         });
 
@@ -56,9 +59,10 @@ class ImageGallery extends React.Component {
 
     let modalImage = (
       <Img
-        className="image-grid__column-inner"
+        className="modal__image"
         key={image.node.id}
-        fluid={image.node.childImageSharp.fluid}
+        objectFit="CONTAIN"
+        fixed={image.node.childImageSharp.fixed}
         alt="Gatsby Docs are awesome"
       />
     );
