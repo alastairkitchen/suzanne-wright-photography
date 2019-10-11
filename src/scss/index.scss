@@ -6,14 +6,7 @@
 @import "./base/html";
 
 // components
-@import "./components/button";
-@import "./components/siteHeader";
-@import "./components/siteMain";
-@import "./components/siteFooter";
-@import "./components/navigation";
-@import "./components/hamburgerMenu";
-@import "./components/mobileHeader";
-@import "./components/pageListItem";
+@import 'components/*';
 
 // modifiers
 @import "./modifiers/menu-open";

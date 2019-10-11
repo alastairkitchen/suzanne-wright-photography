@@ -5,10 +5,11 @@ import Footer from "../footer";
 
 import "../../scss/index.scss";
 
-const SiteLayout = ({ children, counter, increment }) => (
+const SiteLayout = (props) => (
   <React.Fragment>
     <SiteHeader />
-    <main className="site-main">{children}</main>
+    <main className="site-main">{props.children}</main>
+    {props.contentOuter}
     <Footer />
   </React.Fragment>
 );

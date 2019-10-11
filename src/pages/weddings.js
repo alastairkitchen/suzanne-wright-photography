@@ -1,13 +1,13 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 
-const Portraits = ({ data }) => {
+const Weddings = ({ data }) => {
   return (
     <SiteLayout>
-      portraits
+      weddings
     </SiteLayout>
   );
 };
 
-export default Portraits;
+export default Weddings;
 

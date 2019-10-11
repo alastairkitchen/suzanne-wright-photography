@@ -1,0 +1,59 @@
+// ----------------------------------------
+// Image grid
+// ----------------------------------------
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.image-grid__column {
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.image-grid__button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+// 3 column
+
+.image-grid--3-col {
+  .image-grid__column {
+    width: 100%;
+  }
+
+  .image-grid__column-inner {
+    margin: 15px;
+  }
+}
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen740) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 50%;
+    }
+  }
+}
+
+@include mq($from: screen980) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 33.333%;
+    }
+  }
+}

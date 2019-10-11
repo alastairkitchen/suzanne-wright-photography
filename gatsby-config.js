@@ -1,10 +1,11 @@
+const globImporter = require('node-sass-glob-importer');
+
 module.exports = {
   siteMetadata: {
     title: "Suzanne Wright Photographer"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -19,7 +20,28 @@ module.exports = {
         path: `${__dirname}/src/imageGalleries`
       }
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/img/`,
+        name: "images"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
@@ -28,11 +50,13 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: "gatsby-plugin-sass",
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
+        importer: globImporter()
       }
     },
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-offline",
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };

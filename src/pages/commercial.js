@@ -1,13 +1,14 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 
-const Portraits = ({ data }) => {
+const Commercial = ({ data }) => {
+  console.dir(data);
   return (
     <SiteLayout>
-      portraits
+      commercial
     </SiteLayout>
   );
 };
 
-export default Portraits;
+export default Commercial;
 

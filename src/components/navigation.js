@@ -11,12 +11,12 @@ const Navigation = () => (
   <nav>
     <ol className="navigation">
       <NavLink to="/">Home</NavLink>
+      <NavLink to="/family">Family</NavLink>
       <NavLink to="/portraits">Portraits</NavLink>
       <NavLink to="/weddings">Weddings</NavLink>
-      <NavLink to="/family">Family</NavLink>
       <NavLink to="/commercial">Commercial</NavLink>
-      <NavLink to="/">About</NavLink>
-      <NavLink to="/">Contact</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
     </ol>
   </nav>
 );

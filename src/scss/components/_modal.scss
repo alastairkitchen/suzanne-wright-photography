@@ -1,0 +1,62 @@
+// ----------------------------------------
+// Modal
+// ----------------------------------------
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  color: #ffffff;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.modal-exit {
+  opacity: 1;
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.modal__button {
+	position: absolute;
+	right: 40px;
+	top: 40px;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen740) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 50%;
+    }
+  }
+}
+
+@include mq($from: screen980) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 33.333%;
+    }
+  }
+}

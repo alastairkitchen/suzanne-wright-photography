@@ -17,6 +17,7 @@
 
 .site-header__title {
   padding-left: 40px;
+  margin-top: 0;
 }
 
 .site-header__close-btn {
@@ -42,9 +43,14 @@
     width: auto;
     transition: unset;
     min-height: 0;
+    margin-top: 60px;
   }
 
   .site-header__title {
     padding-left: 0;
+  }
+
+  .site-header__close-btn {
+    display: none;
   }
 }
