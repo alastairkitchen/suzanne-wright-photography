@@ -10,8 +10,27 @@
   left: 0;
   background: #000000;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
+.modal__content {
+  max-height: 100%;
+}
+
+.modal__image {
+  max-height: 100%;
+}
+
+.modal__button {
+	position: absolute;
+	right: 40px;
+	top: 40px;
+}
+
+// ----------------------------------------
+// Modal animations
+// ----------------------------------------
 .modal-enter {
   opacity: 0;
 }
@@ -28,12 +47,6 @@
 .modal-exit-active {
   opacity: 0;
   transition: opacity 200ms;
-}
-
-.modal__button {
-	position: absolute;
-	right: 40px;
-	top: 40px;
 }
 
 // ----------------------------------------

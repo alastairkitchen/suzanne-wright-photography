@@ -7,7 +7,9 @@ function Modal(props) {
 			{props.showModal === true && (
 				<CSSTransition timeout={200} classNames="modal">
 					<div className="modal">
-						{props.children}
+						<div className="modal__content">
+							{props.children}
+						</div>
 						<button onClick={props.closeModal} className="modal__button">close</button>
 					</div>
 				</CSSTransition>
