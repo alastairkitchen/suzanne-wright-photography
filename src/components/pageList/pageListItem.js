@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 
 const PageListItem = props => {
+
   let styles = {
-    backgroundImage: `url(${props.bgImage})`
+    backgroundImage: `url(${props.bgImage}?nf_resize=fit&w=1600&h=400)`
   };
 
   return (

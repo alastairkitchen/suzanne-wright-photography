@@ -1,47 +1,29 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
-import PageListItem from "../components/pageListItem/pageListItem";
-import { getImageFromAllImageSharp } from "../helpers/imageGalleryHelper";
-
-const pageListItems = data => {
-  // if (data && data.pages) {
-  //   if (data.pages.edges.length > 0) {
-  //     let pageData = data.pages.edges;
-  //     let items = pageData.map((page, i) => {
-  //       let bgImage = getImageFromAllImageSharp(
-  //         data.images,
-  //         page.node.frontmatter.coverImage
-  //       );
-
-  //       return (
-  //         <PageListItem
-  //           key={i}
-  //           {...page.node.frontmatter}
-  //           index={i + 1}
-  //           bgImage={bgImage[0].node.resize.src}
-  //         />
-  //       );
-  //     });
-  //     return items;
-  //   }
-  // }
-
-  return (
-    <p>homepage</p>
-  )
-};
+import PageList from "../components/pageList/pageList";
 
 export default ({ data }) => {
-  return (
-    <SiteLayout>
-      <div className="page-list">{pageListItems(data)}</div>
-      Now then now thennnnnn..
-    </SiteLayout>
-  );
-};
 
-// Up to here! add all images to query and transform data
+  if (data && data.pages) {
+    if (data.pages.edges.length > 0) {
+      let pages = [];
+      data.pages.edges.forEach(edge => {
+        pages.push(edge.node.frontmatter);
+      })
+
+      return (
+        <SiteLayout>
+          <PageList pages={pages} />
+        </SiteLayout>
+      )
+    }
+  }
+
+  return (
+    <p>error getting pages</p>
+  )
+};
 
 export const query = graphql`
   query {
@@ -60,7 +42,6 @@ export const query = graphql`
             templateKey
             date
             description
-            galleryImages
             url
             coverImage
           }
