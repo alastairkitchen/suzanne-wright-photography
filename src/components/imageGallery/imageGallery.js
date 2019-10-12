@@ -11,10 +11,13 @@ class ImageGallery extends React.Component {
     this.renderImages = this.renderImages.bind(this);
     this.activateModal = this.activateModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.navigatePrevImage = this.navigatePrevImage.bind(this);
+    this.navigateNextImage = this.navigateNextImage.bind(this);
 
     this.state = {
       showModal: false,
-      modalContent: null
+      modalContent: null,
+      activeImageId: null
     }
   }
 
@@ -30,7 +33,7 @@ class ImageGallery extends React.Component {
             <div
               className="image-grid__column"
               key={"image-gallery-" + i}
-              onClick={() => this.activateModal(image)}
+              onClick={() => this.activateModal(i)}
             >
               <div className="image-grid__inner">
                 <div className="image-grid__image" style={bgImageStyle}></div>
@@ -52,28 +55,40 @@ class ImageGallery extends React.Component {
 
   }
 
-  activateModal(image) {
-
-    let modalImage = (
-      <img className="modal__image" src={image} />
-    );
-
+  activateModal(imageId) {
     this.setState((state) => ({
       showModal: true,
-      modalContent: modalImage
+      activeImageId: imageId
     }))
-
   }
 
   closeModal() {
     this.setState({
-      showModal: false
+      showModal: false,
+      activeImageId: null
     })
   }
 
-  render() {
+  navigatePrevImage() {
+    if (this.state.activeImageId !== 0) {
+      let previousImageId = (this.state.activeImageId - 1)
+      this.setState((state) => ({
+        activeImageId: previousImageId
+      }))
+    }
+  }
 
-    console.dir(this.props.images)
+  navigateNextImage() {
+
+    if (this.state.activeImageId < (this.props.images.length - 1)) {
+      let nextImageId = (this.state.activeImageId + 1)
+      this.setState((state) => ({
+        activeImageId: nextImageId
+      }))
+    }
+  }
+
+  render() {
 
     return (
       <Fragment>
@@ -81,8 +96,12 @@ class ImageGallery extends React.Component {
         <Modal
           showModal={this.state.showModal}
           closeModal={this.closeModal}
+          previousFunction={this.navigatePrevImage}
+          nextFunction={this.navigateNextImage}
         >
-          {this.state.modalContent}
+          {this.state.activeImageId !== null && (
+            <img className="modal__image" src={this.props.images[this.state.activeImageId]} />
+          )}
         </Modal>
       </Fragment>
 
