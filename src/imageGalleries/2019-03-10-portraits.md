@@ -7,7 +7,11 @@ description: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
   nostrud exe
-coverImage: /images/flavor_wheel.jpg
-galleryImages: []
+coverImage: /images/buildings-perspective.jpg
+galleryImages:
+  - /images/car-interior.jpg
+  - /images/buildings-perspective.jpg
+  - /images/field.jpg
+  - /images/beach-closeup.jpg
 ---
 
