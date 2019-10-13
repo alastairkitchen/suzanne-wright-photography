@@ -2,26 +2,21 @@
 // Modifiers
 // ----------------------------------------
 
+$openNavAnimation: top .5s cubic-bezier(0.880, -0.145, 0.140, 1.440), right .5s cubic-bezier(0.880, -0.145, 0.140, 1.440), bottom .5s cubic-bezier(0.880, -0.145, 0.140, 1.440), left .5s cubic-bezier(0.880, -0.145, 0.140, 1.440);
+
 html.menu-open {
   overflow-x: hidden;
 
   .site-header {
-    transform: translatex(0);
-  }
-
-  .mobile-header__close-bg {
-    position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: $black;
-    opacity: 0.1;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    transition: $openNavAnimation;
   }
-
-  .mobile-header,
-  .site-main,
-  .site-footer {
-    transform: translateX(350px);
+  
+  .site-header__inner {
+    opacity: 1;
+    transition: opacity .4s ease .5s;
   }
 }

@@ -40,21 +40,19 @@ class Header extends React.Component {
           <HamburgerMenu openMenu={this.openHamburgerMenu} />
           <h2>Suzanne Wright</h2>
         </header>
-        <div
-          className="mobile-header__close-bg"
-          onClick={this.props.closeMenu}
-        />
         <header className="site-header">
-          <button
-            className="site-header__close-btn btn btn--close"
-            onClick={this.props.closeMenu}
-          >
-            X
-          </button>
-          <h2 className="site-header__title">
-            <img src={logo} alt="Suzanne Wright Photographer" />
-          </h2>
-          <Navigation />
+          <div className="site-header__inner">
+            <button
+              className="site-header__close-btn btn btn--close"
+              onClick={this.props.closeMenu}
+            >
+              X
+            </button>
+            <h2 className="site-header__title">
+              <img src={logo} alt="Suzanne Wright Photographer" />
+            </h2>
+            <Navigation closeMenu={(this.props.closeMenu)} />
+          </div>
         </header>
       </React.Fragment>
     );

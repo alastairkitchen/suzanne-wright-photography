@@ -6,13 +6,8 @@
   display: block;
   text-align: center;
   padding: 0 20px;
-  transform: translatex(0); // menu open animation
-  transition: transform $menu-transition ease; // menu open animation
-}
-
-.mobile-header__close-bg {
-  opacity: 0;
-  transition: opacity $menu-transition 0.2s ease;
+  height: 50px;
+  margin-bottom: 50px;
 }
 
 // ----------------------------------------

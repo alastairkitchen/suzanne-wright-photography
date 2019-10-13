@@ -1,24 +1,35 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const NavLink = props => (
-  <li className="navigation__list">
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-);
+const Navigation = (props) => {
 
-const Navigation = () => (
-  <nav>
-    <ol className="navigation">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/family">Family</NavLink>
-      <NavLink to="/portraits">Portraits</NavLink>
-      <NavLink to="/weddings">Weddings</NavLink>
-      <NavLink to="/commercial">Commercial</NavLink>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
-    </ol>
-  </nav>
-);
+  return (
+    <nav>
+      <ol className="navigation">
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/">Home</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/family">Family</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/portraits">Portraits</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/weddings">Weddings</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/commercial">Commercial</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/about">About</Link>
+        </li>
+        <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/contact">Contact</Link>
+        </li>
+      </ol>
+    </nav>
+  )
+}
 
 export default Navigation;

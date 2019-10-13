@@ -2,27 +2,42 @@
 // Site Header
 // ----------------------------------------
 
+$closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), bottom .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), left .5s cubic-bezier(1.000, -0.135, 0.490, 1.320);
+
 .site-header {
-  text-align: left;
   position: fixed;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  overflow: hidden;
+  text-align: center;
+  transition: $closeNavAnimation;
+  background-color: $lightYellow;
+  z-index: 100;
+}
+
+.site-header__inner {
+  position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 350px;
-  transform: translatex(-100%);
-  transition: transform $menu-transition ease;
-  background-color: $white;
-  min-height: 100%;
-  min-height: 100vh;
+  opacity: 0;
+  overflow: auto;
+  padding-top: 30px;
+  transition: opacity .4s ease 0s;
 }
 
 .site-header__title {
   padding-left: 40px;
   margin-top: 0;
+  display: none;
 }
 
 .site-header__close-btn {
   position: absolute;
-  right: 15px;
+  left: 15px;
   top: 15px;
 }
 
@@ -44,10 +59,22 @@
     transition: unset;
     min-height: 0;
     margin-top: 60px;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    background-color: transparent;
+  }
+
+  .site-header__inner {
+    position: relative;
+    opacity: 1;
+    overflow: visible;
   }
 
   .site-header__title {
     padding-left: 0;
+    display: block;
   }
 
   .site-header__close-btn {

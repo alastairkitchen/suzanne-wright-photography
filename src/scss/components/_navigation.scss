@@ -4,20 +4,20 @@
 
 .navigation {
   list-style: none;
-  padding-left: 40px;
-  text-align: left;
+  text-align: center;
   margin-top: 60px;
   margin-bottom: 100px;
+  padding: 0;
 }
 
 .navigation__list {
-  padding: 20px 15px;
+  padding: 25px 15px;
 
   a {
-    text-decoration: none;
-    font-size: 18px;
+    text-decoration: underline;
+    font-size: 28px;
     color: $darkGrey;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-bold;
   }
 }
 
@@ -31,13 +31,18 @@
 
 @include mq($from: screen740) {
   .navigation {
-    text-align: center;
-    padding-left: 0;
     display: flex;
     justify-content: center;
   }
 
   .navigation__list {
     margin: 0 5px;
+    padding: 20px 15px;
+
+    a {
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: $font-weight-regular;
+    }
   }
 }
