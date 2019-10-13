@@ -1,13 +1,49 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
+import ImageGallery from "../components/imageGallery/imageGallery";
+// utils
+import { extractFrontMatterData } from "../utils/graphqlUtil.js";
 
-const Weddings = ({ data }) => {
+const Family = ({ data }) => {
+
+  let galleryImages = extractFrontMatterData(data.pageData).galleryImages;
+
   return (
-    <SiteLayout>
-      weddings
+
+    <SiteLayout
+      contentOuter={<ImageGallery images={galleryImages} />}
+    >
+
     </SiteLayout>
   );
 };
 
-export default Weddings;
+export default Family;
 
+export const query = graphql`
+  query {
+    pageData: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "image-gallery" }
+          title: { eq: "Weddings" }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            templateKey
+            date
+            description
+            galleryImages
+            url
+            coverImage
+          }
+        }
+      }
+    }
+  }
+`;

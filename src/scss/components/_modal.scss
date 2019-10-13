@@ -2,6 +2,11 @@
 // Modal
 // ----------------------------------------
 
+.modal-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
 .modal {
   position: fixed;
   top: 0;
