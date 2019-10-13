@@ -27,7 +27,7 @@ class ImageGallery extends React.Component {
       if (this.props.images.length > 0) {
         let imageElements = this.props.images.map((image, i) => {
 
-          let bgImageStyle = { backgroundImage: `url(${image})` }
+          let bgImageStyle = { backgroundImage: `url(${image}?nf_resize=smartcrop&w=800&h=800)` }
 
           return (
             <div
@@ -100,7 +100,7 @@ class ImageGallery extends React.Component {
           nextFunction={this.navigateNextImage}
         >
           {this.state.activeImageId !== null && (
-            <img className="modal__image" src={this.props.images[this.state.activeImageId]} />
+            <img className="modal__image" src={`${this.props.images[this.state.activeImageId]}?nf_resize=fit&w=1600&h=1000`} />
           )}
         </Modal>
       </Fragment>
