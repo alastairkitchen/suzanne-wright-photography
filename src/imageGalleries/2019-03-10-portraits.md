@@ -8,10 +8,21 @@ description: >-
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
   nostrud exe
 coverImage: /images/buildings-perspective.jpg
-galleryImages:
-  - /images/car-interior.jpg
-  - /images/buildings-perspective.jpg
-  - /images/field.jpg
-  - /images/beach-closeup.jpg
+imageGallery:
+  - image: /images/mountain.jpg
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
+    type: galleryImage
+  - image: /images/car-interior.jpg
+    title: 'Sit amet, consectetur adipiscing elit, sed'
+    type: galleryImage
+  - image: /images/buildings-perspective.jpg
+    title: 'Consectetur adipiscing elit, sed'
+    type: galleryImage
+  - image: /images/field-run.jpg
+    title: 'Adipiscing elit, sed um dolor sit amet, consectetur adipiscing elit, sed'
+    type: galleryImage
+  - image: /images/mountain.jpg
+    title: 'Ctetur adipiscing elit, sednsectetur adipiscing elit, sed'
+    type: galleryImage
 ---
 
