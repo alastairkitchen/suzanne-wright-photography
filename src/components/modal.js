@@ -27,7 +27,11 @@ class Modal extends React.Component {
 							<div className="modal__content">
 								{this.props.children}
 							</div>
-							<button onClick={this.props.closeModal} className="modal__btn">close</button>
+
+							<div className="modal__ui">
+								{this.props.modalCount}
+								<button onClick={this.props.closeModal} className="modal__btn">close</button>
+							</div>
 
 							{this.props.previousFunction !== undefined && (
 								<button onClick={this.props.previousFunction} className="modal__navigation modal__previous-btn">Previous</button>

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PlusBoxIcon from "../../assets/svg/plus-box.inline.svg";
-import Modal from "../imageGallery/modal";
+import Modal from "../modal";
 
 
 class ImageGallery extends React.Component {
@@ -108,6 +108,7 @@ class ImageGallery extends React.Component {
           closeModal={this.closeModal}
           previousFunction={this.navigatePrevImage}
           nextFunction={this.navigateNextImage}
+          modalCount={`${this.state.activeImageId + 1}/${this.props.images.length}`}
         >
           {this.state.activeImageId !== null && (
             <img className="modal__image" src={`${this.props.images[this.state.activeImageId]}?nf_resize=fit&w=1600&h=1000`} />
