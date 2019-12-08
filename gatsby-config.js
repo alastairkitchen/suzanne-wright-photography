@@ -23,13 +23,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/img/`,
-        name: "images"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `content`,
         path: `${__dirname}/src/content`
       }
@@ -53,6 +46,14 @@ module.exports = {
       resolve: "gatsby-plugin-sass",
       options: {
         importer: globImporter()
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
       }
     },
     "gatsby-plugin-netlify-cms",

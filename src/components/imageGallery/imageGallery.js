@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Img from "gatsby-image";
+import PlusBoxIcon from "../../assets/svg/plus-box.inline.svg";
 import Modal from "../imageGallery/modal";
 
 
@@ -33,10 +33,20 @@ class ImageGallery extends React.Component {
             <div
               className="image-grid__column"
               key={"image-gallery-" + i}
-              onClick={() => this.activateModal(i)}
             >
               <div className="image-grid__inner">
-                <div className="image-grid__image" style={bgImageStyle}></div>
+                <button
+                  type="button"
+                  onClick={() => this.activateModal(i)}
+                  className="image-grid__button"
+                >
+                  <div className="image-grid__image" style={bgImageStyle}>
+                    <div className="image-grid__ui">
+                      <PlusBoxIcon className="image-grid__ui-item" />
+                      <p className="image-grid__ui-item">view</p>
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
           );
