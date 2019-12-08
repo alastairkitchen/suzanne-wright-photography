@@ -18,5 +18,11 @@ imageGallery:
   - image: /images/buildings-perspective.jpg
     title: 'Consectetur adipiscing elit, sed'
     type: galleryImage
+  - image: /images/field-run.jpg
+    title: 'Adipiscing elit, sed um dolor sit amet, consectetur adipiscing elit, sed'
+    type: galleryImage
+  - image: /images/mountain.jpg
+    title: 'Ctetur adipiscing elit, sednsectetur adipiscing elit, sed'
+    type: galleryImage
 ---
 
