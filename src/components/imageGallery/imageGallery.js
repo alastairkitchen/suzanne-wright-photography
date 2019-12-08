@@ -23,11 +23,11 @@ class ImageGallery extends React.Component {
 
   renderImages() {
 
-    if (this.props.images) {
-      if (this.props.images.length > 0) {
-        let imageElements = this.props.images.map((image, i) => {
+    if (this.props.imageGallery) {
+      if (this.props.imageGallery.length > 0) {
+        let imageElements = this.props.imageGallery.map((gallery, i) => {
 
-          let bgImageStyle = { backgroundImage: `url(${image}?nf_resize=smartcrop&w=800&h=800)` }
+          let bgImageStyle = { backgroundImage: `url(${gallery.image}?nf_resize=smartcrop&w=800&h=800)` }
 
           return (
             <div
@@ -90,7 +90,7 @@ class ImageGallery extends React.Component {
 
   navigateNextImage() {
 
-    if (this.state.activeImageId < (this.props.images.length - 1)) {
+    if (this.state.activeImageId < (this.props.imageGallery.length - 1)) {
       let nextImageId = (this.state.activeImageId + 1)
       this.setState((state) => ({
         activeImageId: nextImageId
@@ -100,6 +100,7 @@ class ImageGallery extends React.Component {
 
   render() {
 
+
     return (
       <Fragment>
         {this.renderImages()}
@@ -108,10 +109,11 @@ class ImageGallery extends React.Component {
           closeModal={this.closeModal}
           previousFunction={this.navigatePrevImage}
           nextFunction={this.navigateNextImage}
-          modalCount={`${this.state.activeImageId + 1}/${this.props.images.length}`}
+          modalCount={this.state.activeImageId != null ? `${this.state.activeImageId + 1}/${this.props.imageGallery.length}` : null}
+          title={this.state.activeImageId != null ? this.props.imageGallery[this.state.activeImageId].title : null}
         >
           {this.state.activeImageId !== null && (
-            <img className="modal__image" src={`${this.props.images[this.state.activeImageId]}?nf_resize=fit&w=1600&h=1000`} />
+            <img className="modal__image" src={`${this.props.imageGallery[this.state.activeImageId].image}?nf_resize=fit&w=1600&h=1000`} />
           )}
         </Modal>
       </Fragment>

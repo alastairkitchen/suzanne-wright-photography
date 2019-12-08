@@ -21,8 +21,7 @@
 
 .modal__content {
   display: block;
-  max-height: 100%;
-  height: 100%;
+  padding: 2vh 5vw 60px 5vw;
 }
 
 .modal__image {
@@ -30,23 +29,72 @@
 }
 
 .modal__btn {
-	position: absolute;
-	right: 40px;
-	top: 40px;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.modal__navigation {
+.modal-navigation {
   position: absolute;
-  top: 120px;
+  top: 30vh;
+  max-width: 1600px;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 100%;
+}
+
+.modal__navigation-btn {
+  position: absolute;
+  height: 50px;
+  width: 50px;
 }
 
 .modal__previous-btn {
-	left: 0px;
+	left: 5px;
 }
 
 .modal__next-btn {
-	right: 0px;
+	right: 5px;
 }
+
+.modal-close__btn {
+  width: 40px;
+  padding-top: 6px;
+}
+
+.modal-upper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-upper__row {
+  display: flex;
+  align-items: center;
+  justify-items: flex-end;
+  padding: 0 15px;
+  justify-content: flex-end;
+  max-width: 1600px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.modal-upper__count {
+  margin-right: auto;
+}
+
+.modal__bottom-ui {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  min-height: 50px;
+}
+
 
 // ----------------------------------------
 // Modal animations

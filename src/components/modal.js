@@ -1,5 +1,8 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import ChevronLeftIcon from "../assets/svg/chevron-left.inline.svg";
+import ChevronRightIcon from "../assets/svg/chevron-right.inline.svg";
+import CloseIcon from "../assets/svg/close-icon.inline.svg";
 
 class Modal extends React.Component {
 
@@ -28,17 +31,36 @@ class Modal extends React.Component {
 								{this.props.children}
 							</div>
 
-							<div className="modal__ui">
-								{this.props.modalCount}
-								<button onClick={this.props.closeModal} className="modal__btn">close</button>
+							<div className="modal-upper">
+								<div className="modal-upper__row">
+									{this.props.modalCount && (
+										<p className="modal-upper__count">{this.props.modalCount}</p>
+									)}
+									<button onClick={this.props.closeModal} className="modal__btn modal__close-btn">
+										<CloseIcon />
+									</button>
+								</div>
 							</div>
 
-							{this.props.previousFunction !== undefined && (
-								<button onClick={this.props.previousFunction} className="modal__navigation modal__previous-btn">Previous</button>
-							)}
-							{this.props.nextFunction !== undefined && (
-								<button onClick={this.props.nextFunction} className="modal__navigation modal__next-btn">Next</button>
-							)}
+							<div className="modal__bottom-ui">
+								{this.props.title && (
+									<h4>{this.props.title}</h4>
+								)}
+							</div>
+
+							<div className="modal-navigation">
+								{this.props.previousFunction !== undefined && (
+									<button onClick={this.props.previousFunction} className="modal__btn modal__navigation-btn modal__previous-btn">
+										<ChevronLeftIcon />
+									</button>
+								)}
+								{this.props.nextFunction !== undefined && (
+									<button onClick={this.props.nextFunction} className=" modal__btn modal__navigation-btn modal__next-btn">
+										<ChevronRightIcon />
+									</button>
+								)}
+							</div>
+
 						</div>
 					</CSSTransition>
 				)}
