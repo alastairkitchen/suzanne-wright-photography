@@ -14,7 +14,7 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
   text-align: center;
   transition: $closeNavAnimation;
   background-color: $lightYellow;
-  z-index: 1;
+  z-index: 100;
 }
 
 .site-header__inner {
