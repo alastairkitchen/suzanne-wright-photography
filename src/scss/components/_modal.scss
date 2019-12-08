@@ -21,7 +21,7 @@
 
 .modal__content {
   display: block;
-  padding: 2vh 5vw 60px 5vw;
+  padding: 15vh 5vw 60px 5vw;
 }
 
 .modal__image {
@@ -37,11 +37,12 @@
 
 .modal-navigation {
   position: absolute;
-  top: 30vh;
   max-width: 1600px;
   left: 50%;
   transform: translatex(-50%);
   width: 100%;
+  bottom: 0;
+  height: 50px;
 }
 
 .modal__navigation-btn {
@@ -137,10 +138,6 @@
     display: flex;
   }
 
-  .modal-navigation {
-    top: 50%;
-    transform: translate&(-50%);
-  }
 }
 
 @include mq($from: screen980) {
@@ -148,5 +145,15 @@
     .image-grid__column {
       width: 33.333%;
     }
+  }
+
+  .modal__content {
+    padding: 2vh 5vw 60px 5vw;
+  }
+
+  .modal-navigation {
+    top: 30vh;
+    bottom: auto;
+    height: auto;
   }
 }
