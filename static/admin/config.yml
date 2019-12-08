@@ -24,9 +24,15 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
       - label: "Gallery"
-        name: "galleryImages"
+        name: "imageGallery"
         widget: "list"
-        field: { label: Image, name: image, widget: image }
+        types:
+        - label: "Gallery Image"
+          name: "galleryImage"
+          widget: object
+          fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Title, name: title, widget: text  }
   - name: "generic"
     label: "Generic"
     folder: "src/content"
