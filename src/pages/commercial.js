@@ -6,12 +6,12 @@ import { extractFrontMatterData } from "../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
 
-  let galleryImages = extractFrontMatterData(data.pageData).galleryImages;
+  let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
 
   return (
 
     <SiteLayout
-      contentOuter={<ImageGallery images={galleryImages} />}
+      contentOuter={<ImageGallery imageGallery={imageGallery} />}
     >
 
     </SiteLayout>
@@ -38,7 +38,10 @@ export const query = graphql`
             templateKey
             date
             description
-            galleryImages
+            imageGallery {
+              image
+              title
+            }
             url
             coverImage
           }
