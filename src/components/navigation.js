@@ -10,6 +10,9 @@ const Navigation = (props) => {
           <Link onClick={() => props.closeMenu()} to="/">Home</Link>
         </li>
         <li className="navigation__list">
+          <Link onClick={() => props.closeMenu()} to="/recent-work">Recent Work</Link>
+        </li>
+        <li className="navigation__list">
           <Link onClick={() => props.closeMenu()} to="/family">Family</Link>
         </li>
         <li className="navigation__list">
@@ -17,9 +20,6 @@ const Navigation = (props) => {
         </li>
         <li className="navigation__list">
           <Link onClick={() => props.closeMenu()} to="/weddings">Weddings</Link>
-        </li>
-        <li className="navigation__list">
-          <Link onClick={() => props.closeMenu()} to="/commercial">Commercial</Link>
         </li>
         <li className="navigation__list">
           <Link onClick={() => props.closeMenu()} to="/about">About</Link>
