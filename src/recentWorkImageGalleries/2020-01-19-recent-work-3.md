@@ -2,7 +2,7 @@
 templateKey: recent-work-image-gallery
 title: Recent Work 3
 active: true
-url: recent-work-3
+url: recent-work/recent-work-3
 date: 2020-01-19T12:34:02.277Z
 description: recent work 3
 coverImage: /images/field.jpg
