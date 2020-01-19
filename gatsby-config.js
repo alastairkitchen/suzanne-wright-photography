@@ -20,6 +20,13 @@ module.exports = {
         path: `${__dirname}/src/imageGalleries`
       }
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `src`,
+    //     path: `${__dirname}/src/recentWorkImageGalleries`
+    //   }
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
