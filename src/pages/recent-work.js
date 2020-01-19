@@ -5,8 +5,6 @@ import PageList from "../components/pageList/pageList";
 
 export default ({ data }) => {
 
-	console.dir(data);
-
 	if (data && data.pages) {
 		if (data.pages.edges.length > 0) {
 			let pages = [];

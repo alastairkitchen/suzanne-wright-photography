@@ -16,3 +16,28 @@ body {
 img {
   max-width: 100%;
 }
+
+.site-container {
+  margin: 0 auto;
+}
+
+.site-row {
+  padding: 0 10px;
+}
+
+.site-main__description {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/*
+ * Media queries
+ */
+
+@include mq($from: screen740) {
+  
+  .site-container {
+    max-width: 1400px;
+  }
+
+}
