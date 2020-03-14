@@ -1,9 +1,10 @@
-import React from "react";
-import Navigation from "./navigation";
-import HamburgerMenu from "./hamburgerMenu";
-import { connect } from "react-redux";
-import { toggleMenu, closeMenu } from "../actions/app";
-import logo from "../assets/svg/logo.svg";
+import React from 'react';
+import Navigation from './navigation';
+import HamburgerMenu from './hamburgerMenu';
+import { connect } from 'react-redux';
+import { toggleMenu, closeMenu } from '../../actions/app';
+import logo from '../../assets/svg/logo.svg';
+import SocialIcons from '../socialIcons'
 
 class Header extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class Header extends React.Component {
         </header>
         <header className="site-header">
           <div className="site-header__inner">
+            <SocialIcons containerClass="site-header__social-icons" />
             <button
               className="site-header__close-btn btn btn--close"
               onClick={this.props.closeMenu}

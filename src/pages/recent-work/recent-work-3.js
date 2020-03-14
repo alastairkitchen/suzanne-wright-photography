@@ -15,7 +15,7 @@ const Family = ({ data }) => {
     >
       <div className="site-container">
         <div className="site-row">
-          <p class="site-main__description">{extractFrontMatterData(data.pageData).description}</p>
+          <p className="site-main__description">{extractFrontMatterData(data.pageData).description}</p>
         </div>
       </div>
     </SiteLayout>

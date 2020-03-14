@@ -1,0 +1,23 @@
+.social-icons {
+	display: flex;
+	list-style: none;
+	padding-left: 15px;
+	align-items: center;
+
+
+	svg {
+		color: $black
+	}
+}
+
+.social-icons__anchor {
+	padding-right: 15px;
+}
+
+.social-icons__svg {
+	width: 22px;
+}
+
+.social-icons__email-svg {
+	width: 30px;
+}

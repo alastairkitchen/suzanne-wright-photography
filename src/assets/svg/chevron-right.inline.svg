@@ -1,4 +1,11 @@
-<svg width="10" height="23" xmlns="http://www.w3.org/2000/svg">
-    <title>Next</title>
-    <g fill="#D8D8D8" fill-rule="evenodd"><path d="M-.027.551L2.23.086 9.58 11.543l-.602.912-1.207.25z"/><path d="M-.027 22.53l2.256.466L9.574 11.55l-.568-.916-1.235-.255z"/></g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="23px" viewBox="0 0 9 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Path 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gallery-lightbox-(light)" transform="translate(-996.000000, -584.000000)" fill="#171717">
+            <polygon id="Path-3" transform="translate(1000.282556, 595.201599) rotate(-180.000000) translate(-1000.282556, -595.201599) " points="997.434937 595.278931 1004.56511 584.248177 1003.35706 584 996 595.116333 1003.35706 606.403198 1004.56511 606.227585"></polygon>
+        </g>
+    </g>
 </svg>

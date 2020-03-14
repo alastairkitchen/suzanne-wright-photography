@@ -13,19 +13,20 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #000000;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
+  background: $white;
+  color: $black;
 }
 
 .modal__content {
   display: block;
-  padding: 15vh 5vw 60px 5vw;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .modal__image {
-  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+  max-height: calc(100vh - 145px); // stops image from becoming too large
 }
 
 .modal__btn {
@@ -51,6 +52,11 @@
   width: 50px;
 }
 
+.modal__download-btn {
+  margin-right: auto;
+  margin-left: 15px;
+}
+
 .modal__previous-btn {
 	left: 5px;
 }
@@ -64,14 +70,6 @@
   padding-top: 6px;
 }
 
-.modal-upper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0,0,0,0.5);
-}
-
 .modal-upper__row {
   display: flex;
   align-items: center;
@@ -83,15 +81,7 @@
   margin: 0 auto;
 }
 
-.modal-upper__count {
-  margin-right: auto;
-}
-
 .modal__bottom-ui {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   text-align: center;
   min-height: 50px;
 }
@@ -148,11 +138,11 @@
   }
 
   .modal__content {
-    padding: 2vh 5vw 60px 5vw;
+    padding: 2vh 5vw 0 5vw;
   }
 
   .modal-navigation {
-    top: 30vh;
+    top: calc(45vh - 25px);
     bottom: auto;
     height: auto;
   }

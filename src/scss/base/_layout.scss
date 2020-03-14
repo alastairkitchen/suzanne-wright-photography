@@ -5,8 +5,8 @@
 html {
   height: 100%;
   max-width: 100%;
-  // font-family: "Muli", sans-serif;
-  font-family: "avenir";
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -19,6 +19,7 @@ img {
 
 .site-container {
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .site-row {
@@ -33,11 +34,3 @@ img {
 /*
  * Media queries
  */
-
-@include mq($from: screen740) {
-  
-  .site-container {
-    max-width: 1400px;
-  }
-
-}

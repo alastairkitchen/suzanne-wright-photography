@@ -6,23 +6,23 @@ import { extractFrontMatterData } from "../../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
 
-	console.dir(data);
+  console.dir(data);
 
-	let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
+  let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
 
-	return (
+  return (
 
-		<SiteLayout
-			contentOuter={
-				<ImageGallery imageGallery={imageGallery} />}
-		>
-			<div className="site-container">
-				<div className="site-row">
-					<p class="site-main__description">{extractFrontMatterData(data.pageData).description}</p>
-				</div>
-			</div>
-		</SiteLayout>
-	);
+    <SiteLayout
+      contentOuter={
+        <ImageGallery imageGallery={imageGallery} />}
+    >
+      <div className="site-container">
+        <div className="site-row">
+          <p className="site-main__description">{extractFrontMatterData(data.pageData).description}</p>
+        </div>
+      </div>
+    </SiteLayout>
+  );
 };
 
 export default Family;

@@ -32,17 +32,13 @@
   background-size: cover;
 
   &:hover {
-    .page-list-item__title {
-      color: var(--light-gray);
-      text-shadow: 0 0 0 transparent;
-    }
 
     .page-list-item__title:after {
       width: 32px;
     }
 
     .page-list-item__title-wrap {
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.60);
     }
 
     .page-list-item__icon {
@@ -88,18 +84,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.2);
   transition: background-color 0.4s ease;
 }
 
 .page-list-item__title {
   text-align: center;
-  font-family: avenir;
   font-size: 15px;
   color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
-  transition: text-shadow 0.4s ease;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.25px;
+
 
   &:after {
     content: "";

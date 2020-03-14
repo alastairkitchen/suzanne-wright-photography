@@ -27,6 +27,8 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
   overflow: auto;
   padding-top: 30px;
   transition: opacity .4s ease 0s;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .site-header__title {
@@ -39,6 +41,11 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
   position: absolute;
   left: 15px;
   top: 15px;
+}
+
+.site-header__social-icons {
+  position: absolute;
+  top: 17px;
 }
 
 // ----------------------------------------
