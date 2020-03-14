@@ -4,7 +4,9 @@ import HamburgerMenu from './hamburgerMenu';
 import { connect } from 'react-redux';
 import { toggleMenu, closeMenu } from '../../actions/app';
 import logo from '../../assets/svg/logo.svg';
-import SocialIcons from '../socialIcons'
+import SocialIcons from '../socialIcons';
+import CloseIcon from '../../assets/svg/close-icon.inline.svg';
+import { Link } from "gatsby";
 
 class Header extends React.Component {
   constructor(props) {
@@ -39,7 +41,15 @@ class Header extends React.Component {
       <React.Fragment>
         <header className="mobile-header">
           <HamburgerMenu openMenu={this.openHamburgerMenu} />
-          <h2>Suzanne Wright</h2>
+
+          <Link
+            to="/"
+            className="mobile-header__title"
+          >
+            Suzanne Wright
+            <span>Photographer</span>
+          </Link>
+
         </header>
         <header className="site-header">
           <div className="site-header__inner">
@@ -48,10 +58,12 @@ class Header extends React.Component {
               className="site-header__close-btn btn btn--close"
               onClick={this.props.closeMenu}
             >
-              X
+              <CloseIcon />
             </button>
             <h2 className="site-header__title">
-              <img src={logo} alt="Suzanne Wright Photographer" />
+              <Link to="/" className="site-header__logo">
+                <img src={logo} alt="Suzanne Wright Photographer" />
+              </Link>
             </h2>
             <Navigation closeMenu={(this.props.closeMenu)} />
           </div>

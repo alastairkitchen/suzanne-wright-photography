@@ -11,13 +11,13 @@ const SocialIcons = (
 
 	return (
 		<ul className={`${containerClass} social-icons`}>
-			<li>
+			<li className="social-icons__list-item">
 				<a href="#" className="social-icons__anchor"><FacebookIcon className="social-icons__svg" /></a>
 			</li>
-			<li>
+			<li className="social-icons__list-item">
 				<a href="#" className="social-icons__anchor"><InstagramIcon className="social-icons__svg" /></a>
 			</li>
-			<li>
+			<li className="social-icons__list-item">
 				<a href="#" className="social-icons__anchor"><EmailIcon className="social-icons__email-svg" /></a>
 			</li>
 		</ul>

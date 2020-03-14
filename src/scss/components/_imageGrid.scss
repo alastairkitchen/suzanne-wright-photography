@@ -5,7 +5,7 @@
 .image-grid {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1400px;
+  max-width: $site-width;
   margin: 0 auto;
 }
 

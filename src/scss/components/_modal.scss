@@ -21,6 +21,7 @@
   display: block;
   margin: 0 auto;
   max-width: 1400px;
+  padding: 0 15px;
 }
 
 .modal__image {
@@ -84,8 +85,16 @@
 .modal__bottom-ui {
   text-align: center;
   min-height: 50px;
+  padding-top: 15px;
 }
 
+.modal__close-btn {
+  padding: 0;
+
+  svg {
+    width: 18px;
+  }
+}
 
 // ----------------------------------------
 // Modal animations
@@ -126,6 +135,7 @@
 
   .modal-content {
     display: flex;
+    padding: 0;
   }
 
 }

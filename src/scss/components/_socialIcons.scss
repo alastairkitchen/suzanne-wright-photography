@@ -10,14 +10,31 @@
 	}
 }
 
-.social-icons__anchor {
+.social-icons__list-item {
 	padding-right: 15px;
 }
 
+.social-icons__anchor {
+	display: block;
+}
+
 .social-icons__svg {
-	width: 22px;
+	width: 19px;
 }
 
 .social-icons__email-svg {
-	width: 30px;
+	width: 28px;
+}
+
+
+@include mq($from: screen740) {
+
+	.social-icons__svg {
+		width: 22px;
+	}
+	
+	.social-icons__email-svg {
+		width: 30px;
+	}
+
 }

@@ -8,6 +8,18 @@
   padding: 0 20px;
   height: 50px;
   margin-bottom: 50px;
+  padding-top: 15px;
+}
+
+.mobile-header__title{
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+
+  span {
+    font-size: 12px;
+    display: block;
+  }
 }
 
 // ----------------------------------------
