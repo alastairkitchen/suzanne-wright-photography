@@ -10,11 +10,9 @@
 .page-list {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 100%;
-  grid-auto-rows: minmax(350px, 400px);
   grid-column-gap: 25px;
   grid-row-gap: 25px;
-  padding: 0 15px;
+  padding: 0 20px;
   list-style: none;
   grid-template-areas:
     "item1"
@@ -29,6 +27,7 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 100%; // square asprect ratio
 
   &:hover {
 
@@ -83,7 +82,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.6);
   transition: background-color 0.4s ease;
 }
 
@@ -99,11 +98,11 @@
   &:after {
     content: "";
     display: block;
-    width: 0px;
+    width: 50px;
     height: 1px;
     background: #e1e1e1;
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     transition: width 0.5s 0.2s ease, opacity 0.3s 0.2s ease;
@@ -113,8 +112,8 @@
 .page-list-item__icon {
   position: absolute;
   bottom: 20px;
-  right: 25px;
-  opacity: 0;
+  right: 20px;
+  opacity: 1;
   transition: opacity 0.6s 0.2s ease, right 0.4s 0.2s ease;
 }
 
@@ -135,6 +134,29 @@
       "item4 item5"
       "item6 item6";
   }
+
+  .page-list-item__icon {
+    opacity: 0;
+  }
+
+  .page-list-item__title-wrap {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  .page-list-item__title {
+    text-align: center;
+    font-size: 15px;
+    color: var(--white);
+    position: relative;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.25px;
+  
+  
+    &:after {
+      width: 0px;
+      bottom: -20px;
+    }
+  }
 }
 
 @include mq($from: screen1024) {
@@ -147,17 +169,3 @@
   }
 }
 
-// @include mq($from: screen1300) {
-//   .page-list {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     grid-auto-rows: minmax(400px, 600px);
-//     grid-template-areas:
-//       "item1 item1 item2 item2 item2"
-//       "item3 item3 item3 item4 item4"
-//       "item5 item5 item6 item6 item6";
-//   }
-
-//   .page-list-item__title {
-//     font-size: 21px;
-//   }
-// }
