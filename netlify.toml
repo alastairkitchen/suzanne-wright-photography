@@ -4,4 +4,4 @@
 [build.environment]
   YARN_VERSION = "1.3.2"
   YARN_FLAGS = "--no-ignore-optional"
-  NODE_VERSION = "13.10.1"
+  NODE_VERSION = "12.16.1"
