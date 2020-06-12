@@ -18,6 +18,7 @@
     font-size: 22px;
     color: $darkGrey;
     border-bottom: 1px solid $darkGrey;
+    padding-bottom: 5px;
   }
 }
 
@@ -42,6 +43,12 @@
     a {
       font-size: 18px;
       border-bottom: none;
+    }
+  }
+
+  .navigation__list-active {
+    a {
+      border-bottom: 1px solid $black;
     }
   }
 }
