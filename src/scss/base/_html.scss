@@ -7,3 +7,7 @@ h6 {
   font-weight: $font-weight-light;
   margin: 0;
 }
+
+:focus {
+  outline: $black auto 1px;
+}

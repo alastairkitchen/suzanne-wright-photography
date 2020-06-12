@@ -39,14 +39,18 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
 
 .site-header__close-btn {
   position: absolute;
-  right: 15px;
+  left: 15px;
   top: 15px;
+  z-index: 100;
 }
 
 .site-header__social-icons {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .site-header__logo {
@@ -95,6 +99,9 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
 
   .site-header__social-icons {
     top: 17px;
+    width: auto;
+    justify-content: flex-start;
+    padding-left: 10px;
   }
 }
 

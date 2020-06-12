@@ -46,8 +46,7 @@ class Header extends React.Component {
             to="/"
             className="mobile-header__title"
           >
-            Suzanne Wright
-            <span>Photographer</span>
+            <img className="mobile-header__logo" src={logo} alt="Suzanne Wright Photographer" />
           </Link>
 
         </header>
