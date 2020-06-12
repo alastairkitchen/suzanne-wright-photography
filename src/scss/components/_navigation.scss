@@ -46,7 +46,7 @@
       position: relative;
 
       &:after {
-        @include hoverBorder($darkGrey);
+        @include hoverBorder($darkGreyFade);
       }
 
       &:hover {

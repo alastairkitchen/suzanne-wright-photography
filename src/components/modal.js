@@ -35,7 +35,7 @@ class Modal extends React.Component {
 									{this.props.modalCount && (
 										<p className="modal-upper__count">{this.props.modalCount}</p>
 									)}
-									<button onClick={false} className="modal__btn modal__download-btn">
+									<button className="modal__btn modal__download-btn">
 										<DownloadIcon />
 									</button>
 									<button onClick={this.props.closeModal} className="modal__btn modal__close-btn">
