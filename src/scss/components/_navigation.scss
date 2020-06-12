@@ -18,7 +18,7 @@
     font-size: 22px;
     color: $darkGrey;
     border-bottom: 1px solid $darkGrey;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
   }
 }
 
@@ -43,6 +43,17 @@
     a {
       font-size: 18px;
       border-bottom: none;
+      position: relative;
+
+      &:after {
+        @include hoverBorder($darkGrey);
+      }
+
+      &:hover {
+        &:after {
+          @include hoverBorderHovered;
+        }
+      }
     }
   }
 
