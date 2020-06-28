@@ -35,9 +35,9 @@ class Modal extends React.Component {
 									{this.props.modalCount && (
 										<p className="modal-upper__count">{this.props.modalCount}</p>
 									)}
-									<button className="modal__btn modal__download-btn">
+									<a className="modal__btn modal__download-btn" href={this.props.imageUrl} download>
 										<DownloadIcon />
-									</button>
+									</a>
 									<button onClick={this.props.closeModal} className="modal__btn modal__close-btn">
 										<CloseIcon />
 									</button>
@@ -46,6 +46,7 @@ class Modal extends React.Component {
 
 							<div className="modal__content">
 								{this.props.children}
+
 
 								<div className="modal-navigation">
 									{this.props.previousFunction !== undefined && (

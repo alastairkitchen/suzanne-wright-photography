@@ -51,6 +51,7 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  padding-left: 0;
 }
 
 .site-header__logo {
@@ -101,7 +102,7 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
     top: 17px;
     width: auto;
     justify-content: flex-start;
-    padding-left: 10px;
+    padding-left: 15px;
   }
 }
 
@@ -110,6 +111,10 @@ $closeNavAnimation: top .5s cubic-bezier(1.000, -0.135, 0.490, 1.320), right .5s
 
   .site-header {
     margin-top: 60px;
+  }
+
+  .site-header__social-icons {
+    padding-left: 20px;
   }
 
 }
