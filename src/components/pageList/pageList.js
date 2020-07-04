@@ -1,29 +1,37 @@
 import React from "react";
 import PageListItem from "./pageListItem";
+import lazyloadImages from "../../utils/lazyLoadImages";
 
+class PageList extends React.Component {
 
-const PageList = props => {
+  componentDidMount() {
+    const lazyLoadElements = document.querySelectorAll(".lazy-load");
+    if (lazyLoadElements.length > 0) {
+      lazyloadImages(lazyLoadElements);
+    }
+  }
 
-  return (
-    <div className="page-list">
-      {
-        props.pages.map((page, i) => {
+  render() {
+    return (
+      <div className="page-list">
+        {
+          this.props.pages.map((page, i) => {
 
-          console.dir(page)
+            return (
+              <PageListItem
+                key={i}
+                bgImage={page.coverImage}
+                index={i + 1}
+                title={page.title}
+                url={page.url}
+              />
+            )
+          })
+        }
+      </div>
+    );
+  }
 
-          return (
-            <PageListItem
-              key={i}
-              bgImage={page.coverImage}
-              index={i + 1}
-              title={page.title}
-              url={page.url}
-            />
-          )
-        })
-      }
-    </div>
-  );
-};
+}
 
 export default PageList;

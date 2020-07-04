@@ -9,7 +9,7 @@ const PageListItem = props => {
 
   return (
     <div
-      className={`page-list-item ${props.index ? "item-" + props.index : ""}`}
+      className={`page-list-item lazy-load ${props.index ? "item-" + props.index : ""}`}
       style={styles}
     >
       <Link to={props.url} className="page-list-item__anchor">

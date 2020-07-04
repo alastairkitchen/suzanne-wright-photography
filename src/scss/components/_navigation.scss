@@ -17,8 +17,13 @@
     text-decoration: none;
     font-size: 22px;
     color: $darkGrey;
-    border-bottom: 1px solid $darkGrey;
     padding-bottom: 15px;
+  }
+}
+
+.navigation__list-active {
+  a {
+    font-weight: $font-weight-bold;
   }
 }
 

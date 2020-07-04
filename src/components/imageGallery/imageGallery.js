@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PlusBoxIcon from "../../assets/svg/plus-box.inline.svg";
 import Modal from "../modal";
-
+import lazyloadImages from "../../utils/lazyLoadImages";
 
 class ImageGallery extends React.Component {
 
@@ -18,6 +18,13 @@ class ImageGallery extends React.Component {
       showModal: false,
       modalContent: null,
       activeImageId: null
+    }
+  }
+
+  componentDidMount() {
+    const lazyLoadElements = document.querySelectorAll(".lazy-load");
+    if (lazyLoadElements.length > 0) {
+      lazyloadImages(lazyLoadElements);
     }
   }
 
@@ -40,7 +47,7 @@ class ImageGallery extends React.Component {
                   onClick={() => this.activateModal(i)}
                   className="image-grid__button"
                 >
-                  <div className="image-grid__image" style={bgImageStyle}>
+                  <div className="image-grid__image lazy-load" style={bgImageStyle}>
                     <div className="image-grid__ui">
                       <PlusBoxIcon className="image-grid__ui-item" />
                       <p className="image-grid__ui-item">view</p>
