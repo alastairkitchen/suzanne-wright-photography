@@ -3,12 +3,12 @@ import { Link } from 'gatsby';
 
 const Navigation = (props) => {
 
-  let activePage = window ? window.location.pathname.replace(/^\/([^\/]*).*$/, '$1') : '';
+  let activePage = typeof window !== undefined ? window.location.pathname.replace(/^\/([^\/]*).*$/, '$1') : '';
 
   return (
     <nav>
       <ol className='navigation'>
-        <li className={`navigation__list ${window ? window.location.pathname === '/' ? 'navigation__list-active' : '' : ''}`}>
+        <li className={`navigation__list ${typeof window !== undefined ? window.location.pathname === '/' ? 'navigation__list-active' : '' : ''}`}>
           <Link onClick={() => props.closeMenu()} to='/'>Home</Link>
         </li>
         <li className={`navigation__list ${activePage === 'recent-work' ? 'navigation__list-active' : ''}`}>
