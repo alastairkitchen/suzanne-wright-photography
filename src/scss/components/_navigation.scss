@@ -60,6 +60,7 @@
   .navigation__list-active {
     a {
       border-bottom: 1px solid $black;
+      font-weight: $font-weight-bold;
     }
   }
 }
