@@ -13,10 +13,30 @@ class Modal extends React.Component {
 		super(props);
 
 		this.modalWrapper = React.createRef();
+		this.keydownFunctions = this.keydownFunctions.bind(this);
+		this.attachKeydown = this.attachKeydown.bind(this);
+		this.removeKeydown = this.removeKeydown.bind(this);
 	}
 
-	componentDidMount() {
+	keydownFunctions(e) {
+		if (e.code === 'ArrowRight') {
+			this.props.nextFunction()
+		}
+		if (e.code === 'ArrowLeft') {
+			this.props.previousFunction()
+		}
+	}
 
+	attachKeydown() {
+		if (this.props.previousFunction && this.props.nextFunction) {
+			window.addEventListener('keydown', this.keydownFunctions);
+		}
+	}
+
+	removeKeydown() {
+		if (this.props.previousFunction && this.props.nextFunction) {
+			window.removeEventListener('keydown', this.keydownFunctions);
+		}
 	}
 
 	render() {
@@ -24,11 +44,16 @@ class Modal extends React.Component {
 		return (
 			<TransitionGroup
 				className="modal-wrapper"
-				tabIndex="1"
+				tabIndex="0"
 				ref={this.modalWrapper}
 			>
 				{this.props.showModal === true && (
-					<CSSTransition timeout={200} classNames="modal">
+					<CSSTransition
+						timeout={200}
+						classNames="modal"
+						onEntered={() => this.attachKeydown()} // add keyboard control
+						onExited={() => this.removeKeydown()} // remove keyboard control
+					>
 						<div className="modal">
 							<div className="modal-upper">
 								<div className="modal-upper__row">
