@@ -25,16 +25,21 @@ class Modal extends React.Component {
 		if (e.code === 'ArrowLeft') {
 			this.props.previousFunction()
 		}
+
+		if (e.code === 'Escape') {
+			this.props.closeModal()
+		}
+
 	}
 
 	attachKeydown() {
-		if (this.props.previousFunction && this.props.nextFunction) {
+		if (this.props.previousFunction && this.props.nextFunction && this.props.closeModal) {
 			window.addEventListener('keydown', this.keydownFunctions);
 		}
 	}
 
 	removeKeydown() {
-		if (this.props.previousFunction && this.props.nextFunction) {
+		if (this.props.previousFunction && this.props.nextFunction && this.props.closeModal) {
 			window.removeEventListener('keydown', this.keydownFunctions);
 		}
 	}
