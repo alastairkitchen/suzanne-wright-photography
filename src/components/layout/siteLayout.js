@@ -10,7 +10,9 @@ const SiteLayout = (props) => (
     <SiteHeader />
     <main className="site-main">
       <div className="site-container">
-        {props.children}
+        <div class="site-row">
+          {props.children}
+        </div>
       </div>
     </main>
     {props.contentOuter}

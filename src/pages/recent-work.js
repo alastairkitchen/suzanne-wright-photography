@@ -5,24 +5,25 @@ import PageList from "../components/pageList/pageList";
 
 export default ({ data }) => {
 
-	if (data && data.pages) {
-		if (data.pages.edges.length > 0) {
-			let pages = [];
-			data.pages.edges.forEach(edge => {
-				pages.push(edge.node.frontmatter);
-			})
+  if (data && data.pages) {
+    if (data.pages.edges.length > 0) {
+      let pages = [];
+      data.pages.edges.forEach(edge => {
+        pages.push(edge.node.frontmatter);
+      })
 
-			return (
-				<SiteLayout>
-					<PageList pages={pages} />
-				</SiteLayout>
-			)
-		}
-	}
+      return (
+        <SiteLayout>
+          <h1 class="content-h1">Recent work</h1>
+          <PageList pages={pages} />
+        </SiteLayout>
+      )
+    }
+  }
 
-	return (
-		<p>error getting pages</p>
-	)
+  return (
+    <p>error getting pages</p>
+  )
 };
 
 export const query = graphql`

@@ -31,6 +31,38 @@ img {
   margin-bottom: 20px;
 }
 
+.content-h1 {
+  font-weight: $font-weight-bold;
+  margin-bottom: 20px;
+}
+
+.site-main {
+
+  p, li {
+    line-height: 1.5;
+  }
+  
+  a {
+    color: $greyBlue;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border .2s ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
 /*
  * Media queries
  */
+
+@include mq($from: screen740) {
+  .content-h1 {
+    margin-bottom: 50px;
+  }
+}
