@@ -61,8 +61,8 @@ collections:
           fields:
           - { label: Image, name: image, widget: image }
           - { label: Title, name: title, widget: text  }
-  - name: "generic"
-    label: "Generic"
+  - name: "about"
+    label: "About"
     folder: "src/content"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -71,11 +71,28 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "generic-page",
+          default: "about-page",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Cover Image", name: "coverImage", widget: "image" }
-      - { label: "Main Content", name: "minContent", widget: "text" }
+      - { label: "Main Content", name: "mainContent", widget: "markdown" }
+      - { label: "Main Image", name: "mainImage", widget: "image", required: false }
+  - name: "contact"
+    label: "Contact"
+    folder: "src/content"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "contact-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Main Content", name: "mainContent", widget: "markdown" }
+      - { label: "Main Pricing", name: "mainPricing", widget: "markdown", required: false }
+  
