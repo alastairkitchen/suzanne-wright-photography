@@ -12,6 +12,8 @@ export default ({ data }) => {
         pages.push(edge.node.frontmatter);
       })
 
+      // const recentWorkPageContent = 
+
       return (
         <SiteLayout>
           <h1 className="content-h1">Recent work</h1>
@@ -45,6 +47,24 @@ export const query = graphql`
             description
             url
             coverImage
+          }
+        }
+      }
+    }
+    recentWorkPage: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { regex: "/(recent-work-page)/" }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            templateKey
+            description
           }
         }
       }

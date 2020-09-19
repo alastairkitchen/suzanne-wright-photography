@@ -32,7 +32,7 @@ export const query = graphql`
     pages: allMarkdownRemark(
       filter: {
         frontmatter: {
-          templateKey: { regex: "/(recent-work-image-gallery)|(image-gallery)|(about-page)|(contact-page)/" },
+          templateKey: { regex: "/(recent-work-page)|(^image-gallery$)|(about-page)|(contact-page)/" }
         }
       }
     ) {
