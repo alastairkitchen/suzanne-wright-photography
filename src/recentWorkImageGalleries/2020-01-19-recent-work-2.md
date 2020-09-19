@@ -4,7 +4,8 @@ title: Recent Work 2
 active: true
 url: recent-work/recent-work-2
 date: 2020-01-19T12:34:02.277Z
-description: recent work 2
+description: "Recent work photography gallery by suzanne wright photographer,
+  Leeds photographer "
 coverImage: /images/field-run.jpg
 imageGallery:
   - image: /images/buildings-perspective.jpg
@@ -17,4 +18,3 @@ imageGallery:
     title: Running
     type: galleryImage
 ---
-
