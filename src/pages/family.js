@@ -1,32 +1,20 @@
 import React from "react";
+import { graphql } from 'gatsby';
 import SiteLayout from "../components/layout/siteLayout";
-import Img from "gatsby-image";
-
-const renderImages = data => {
-  if (data && data.allMarkdownRemark) {
-    if (data.allMarkdownRemark.edges.length > 0) {
-      let imagesData =
-        data.allMarkdownRemark.edges[0].node.frontmatter.galleryImages;
-      let items = imagesData.map((image, i) => {
-        console.dir(image);
-        return (
-          <img src={image} style={{ maxWidth: "350px", maxHeight: "350px" }} />
-        );
-      });
-      return items;
-    }
-  }
-};
+import ImageGallery from "../components/imageGallery/imageGallery";
+// utils
+import { extractFrontMatterData } from "../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
-  return (
-    <SiteLayout>
-      {renderImages(data)}
 
-      {/* <Img
-      fluid={}
-      alt="Gatsby Docs are awesome"
-    /> */}
+  let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
+
+  return (
+
+    <SiteLayout
+      contentOuter={<ImageGallery imageGallery={imageGallery} />}
+    >
+
     </SiteLayout>
   );
 };
@@ -35,7 +23,7 @@ export default Family;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    pageData: allMarkdownRemark(
       filter: {
         frontmatter: {
           templateKey: { eq: "image-gallery" }
@@ -51,10 +39,12 @@ export const query = graphql`
             templateKey
             date
             description
-            galleryImages
+            imageGallery {
+              image
+              title
+            }
             url
             coverImage
-            _PARENT
           }
         }
       }

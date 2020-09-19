@@ -1,0 +1,18 @@
+
+
+@mixin hoverBorder($color: #e1e1e1) {
+	content: "";
+	display: block;
+	width: 0;
+	height: 1px;
+	background-color: $color;
+	position: absolute;
+	bottom: -1px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+@mixin hoverBorderHovered {
+	width: 32px;
+}

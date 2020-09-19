@@ -1,14 +1,21 @@
 import React from "react";
 
-import SiteHeader from "../header";
-import Footer from "../footer";
+import SiteHeader from "../header/header";
+import Footer from "../footer/footer";
 
 import "../../scss/index.scss";
 
-const SiteLayout = ({ children, counter, increment }) => (
+const SiteLayout = (props) => (
   <React.Fragment>
     <SiteHeader />
-    <main className="site-main">{children}</main>
+    <main className="site-main">
+      <div className="site-container">
+        <div className="site-row">
+          {props.children}
+        </div>
+      </div>
+    </main>
+    {props.contentOuter}
     <Footer />
   </React.Fragment>
 );

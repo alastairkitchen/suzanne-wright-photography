@@ -1,16 +1,9 @@
-// ----------------------------------------
-// Site footer
-// ----------------------------------------
-
 .site-footer {
-  transform: translatex(0);
-  transition: transform $menu-transition ease;
+	padding-top: 30px;
+	padding-bottom: 20px;
 }
 
-// ----------------------------------------
-// Modifiers
-// ----------------------------------------
 
-// ----------------------------------------
-// Media queries
-// ----------------------------------------
+.site-footer__social-icons {
+	justify-content: center;
+}

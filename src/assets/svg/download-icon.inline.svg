@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="19px" viewBox="0 0 16 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>download icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gallery-lightbox-(light)" transform="translate(-102.000000, -207.000000)" fill="#171717">
+            <g id="download-icon" transform="translate(102.000000, 207.000000)">
+                <g id="Group-3">
+                    <polygon id="Path" points="8.02542725 14.362524 13.6822815 8.76459535 12.7322266 7.89202372 8.02542725 12.6670532 3.44160156 7.89202372 2.368573 8.76459535"></polygon>
+                    <rect id="Rectangle" x="0.768572999" y="17.4166667" width="14.4" height="1.58333333"></rect>
+                    <rect id="Rectangle" x="7.168573" y="0" width="1.6" height="12.6666667"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

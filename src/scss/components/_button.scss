@@ -7,9 +7,13 @@
 
 .btn--close {
   background-color: transparent;
-  padding: 5px 9px;
   font-size: 12px;
-  font-weight: $font-weight-xbold;
   color: $darkGreyAlt;
-  border: 1px solid $darkGreyAlt;
+  border: none;
+  color: $darkGrey;
+  padding: 0;
+
+  svg {
+    width: 22px;
+  }
 }
