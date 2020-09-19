@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from 'gatsby';
 import SiteLayout from "../../components/layout/siteLayout";
 import ImageGallery from "../../components/imageGallery/imageGallery";
 // utils

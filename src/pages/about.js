@@ -1,24 +1,28 @@
 import React from "react";
+import { graphql } from 'gatsby';
 import SiteLayout from "../components/layout/siteLayout";
-
+import { extractFrontMatterData } from '../utils/graphqlUtil';
+import ReactMarkdown from 'react-markdown'
 
 export default class About extends React.Component {
   render() {
 
-    console.dir(this.props.data);
+    const content = extractFrontMatterData(this.props.data.pageData);
+
+    console.dir(content);
 
     return (
       <SiteLayout>
         <h1 className="content-h1">About</h1>
         <div className="about-grid">
           <article className="about-grid__image-col">
-            <img src="/images/about-me-portrait.jpg" />
+            {content.mainImage &&
+              <img src={content.mainImage + '?nf_resize=smartcrop&w=590&h=800'} alt='about suzanne wright' />
+            }
           </article>
           <div className="about-grid__text-col">
             <div className="about-grid__text-inner ">
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, ventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore uatur? Quis autem vel eum iure reprehenderit qui in ea voluptate</p>
-              <p>et quasi architecto beatae vitae dicta sunt explicabun exercitationem ullam vel eum iure reprehenderit qui in ea voluptate</p>
-              <p>Sed ut perspiciatis unde omnis iste naqui ratione voluptatem sequi nesciunt. Nincidunt ut labore uatur? Quis autem vel eum iure reprehenderit qui in ea voluptate</p>
+              <ReactMarkdown source={content.mainContent} />
             </div>
           </div>
         </div>
@@ -45,6 +49,7 @@ export const query = graphql`
             templateKey
             description
             mainContent
+            mainImage
           }
         }
       }

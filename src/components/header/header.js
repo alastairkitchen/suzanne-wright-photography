@@ -64,7 +64,9 @@ class Header extends React.Component {
                 <img src={logo} alt="Suzanne Wright Photographer" />
               </Link>
             </h2>
-            <Navigation closeMenu={(this.props.closeMenu)} />
+            <div className="site-container">
+              <Navigation closeMenu={(this.props.closeMenu)} />
+            </div>
           </div>
         </header>
       </React.Fragment>

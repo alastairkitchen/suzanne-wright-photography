@@ -23,7 +23,7 @@ img {
 }
 
 .site-row {
-  padding: 0 10px;
+  padding: map-get($gutters, 'mobile');
 }
 
 .site-main__description {
@@ -68,11 +68,23 @@ img {
 }
 
 /*
+ * Modifiers
+ */
+
+.content--align-left {
+  text-align: left;
+}
+
+/*
  * Media queries
  */
 
 @include mq($from: screen740) {
   .content-h1 {
     margin-bottom: 50px;
+  }
+
+  .site-row {
+    padding: map-get($gutters, 'desktop');
   }
 }

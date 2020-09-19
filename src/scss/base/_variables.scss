@@ -19,3 +19,9 @@ $font-weight-regular: 400;
 $font-weight-bold: 500;
 
 $site-width: 1200px;
+
+$gutters: (
+	"mobile": 25px,
+	"desktop": 20px,
+	"desktop-large": 30px
+);
