@@ -25,12 +25,14 @@ export default ({ data }) => {
   )
 };
 
+//hideHome: {ne: true}
+
 export const query = graphql`
   query {
     pages: allMarkdownRemark(
       filter: {
         frontmatter: {
-          templateKey: { regex: "/(image-gallery)|(generic-page)/" }
+          templateKey: { regex: "/(recent-work-image-gallery)|(image-gallery)|(about-page)|(contact-page)/" },
         }
       }
     ) {

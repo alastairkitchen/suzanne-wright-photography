@@ -8,7 +8,7 @@ public_folder: /images
 collections:
   - name: "gallery"
     label: "Gallery"
-    folder: "src/imageGalleries"
+    folder: "src/content/imageGalleries"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -33,9 +33,24 @@ collections:
           fields:
           - { label: Image, name: image, widget: image }
           - { label: Title, name: title, widget: text  }
+  - name: "recent-work"
+    label: "Recent Work"
+    folder: "src/content/recent-work"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "recent-work-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
   - name: "recent-work-gallery"
     label: "Recent Work Gallery"
-    folder: "src/recentWorkImageGalleries"
+    folder: "src/content/recentWorkImageGalleries"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -46,7 +61,7 @@ collections:
           default: "recent-work-image-gallery",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Active", name: "active", widget: "boolean", default: false}
+      - { label: "Active", name: "active", widget: "boolean", default: true}
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
