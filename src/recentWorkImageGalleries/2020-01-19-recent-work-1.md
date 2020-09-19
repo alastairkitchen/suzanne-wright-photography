@@ -2,12 +2,12 @@
 templateKey: recent-work-image-gallery
 title: Recent Work 1
 active: true
-hideHome: true
-url: recent-work/recent-work-1
-metaDescription: Recent work photography gallery by suzanne wright photographer,
-  Leeds photographer
+url: /recent-work/recent-work-1
+metaDescription: >-
+  Recent work photography gallery by suzanne wright photographer, Leeds
+  photographer
 date: 2020-01-19T12:34:02.277Z
-description: Recent work photography gallery by suzanne wright photographer, lorem ipsum
+description: 'Recent work photography gallery by suzanne wright photographer, lorem ipsum'
 coverImage: /images/mountain.jpg
 imageGallery:
   - image: /images/field-run.jpg
@@ -20,3 +20,4 @@ imageGallery:
     title: Coffee
     type: galleryImage
 ---
+
