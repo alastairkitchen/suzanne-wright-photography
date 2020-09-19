@@ -1,6 +1,7 @@
 import React from "react";
 import SiteLayout from "../components/layout/siteLayout";
 import { extractFrontMatterData } from "../utils/graphqlUtil";
+import ReactMarkdown from 'react-markdown';
 
 export default class Contact extends React.Component {
   render() {
@@ -12,18 +13,9 @@ export default class Contact extends React.Component {
       <SiteLayout>
         <div className="contact">
           <h1 className="content-h1">Contact</h1>
-          {content.mainContent}
-          <p>Email: <a href="mailto:suzemailaddress@test.com">suzemailaddress@test.com</a></p>
-          <p>Hello lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
-          <div className="table">
-            <p className="table__header">Pricing:</p>
-            <ul className="table__content">
-              <li>package 1 £xxx</li>
-              <li>package 2 £xxx</li>
-              <li>package 3 £xxx</li>
-              <li>package 4 £xxx</li>
-            </ul>
-          </div>
+
+          <ReactMarkdown source={content.mainContent} />
+          <ReactMarkdown source={content.mainPricing} className="pricing-table" />
         </div>
       </SiteLayout>
     );

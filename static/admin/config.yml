@@ -19,7 +19,7 @@ collections:
           default: "image-gallery",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
@@ -48,6 +48,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Active", name: "active", widget: "boolean", default: false}
       - { label: "URL", name: "url", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
@@ -63,7 +64,7 @@ collections:
           - { label: Title, name: title, widget: text  }
   - name: "about"
     label: "About"
-    folder: "src/content"
+    folder: "src/content/about"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -74,13 +75,13 @@ collections:
           default: "about-page",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Main Content", name: "mainContent", widget: "markdown" }
       - { label: "Main Image", name: "mainImage", widget: "image", required: false }
   - name: "contact"
     label: "Contact"
-    folder: "src/content"
+    folder: "src/content/contact"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -91,7 +92,7 @@ collections:
           default: "contact-page",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Main Content", name: "mainContent", widget: "markdown" }
       - { label: "Main Pricing", name: "mainPricing", widget: "markdown", required: false }

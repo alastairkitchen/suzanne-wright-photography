@@ -14,7 +14,7 @@ export default ({ data }) => {
 
       return (
         <SiteLayout>
-          <h1 class="content-h1">Recent work</h1>
+          <h1 className="content-h1">Recent work</h1>
           <PageList pages={pages} />
         </SiteLayout>
       )
