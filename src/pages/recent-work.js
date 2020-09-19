@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
 import PageList from "../components/pageList/pageList";
+import { extractFrontMatterData } from '../utils/graphqlUtil';
 
 export default ({ data }) => {
 
@@ -12,11 +13,14 @@ export default ({ data }) => {
         pages.push(edge.node.frontmatter);
       })
 
-      // const recentWorkPageContent = 
+      const pageContent = extractFrontMatterData(data.recentWorkPage);
 
       return (
         <SiteLayout>
           <h1 className="content-h1">Recent work</h1>
+          {pageContent.description &&
+            <p>{pageContent.description}</p>
+          }
           <PageList pages={pages} />
         </SiteLayout>
       )

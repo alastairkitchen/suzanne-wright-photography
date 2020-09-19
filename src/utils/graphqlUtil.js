@@ -3,6 +3,14 @@
  */
 export const extractFrontMatterData = data => {
 
-	return data.edges[0].node.frontmatter;
+	if (data) {
+
+		if (data.edges) {
+			return data.edges[0].node.frontmatter;
+		}
+	} else {
+		console.log('data is not defined')
+	}
+
 
 };

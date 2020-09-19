@@ -9,8 +9,6 @@ export default class About extends React.Component {
 
     const content = extractFrontMatterData(this.props.data.pageData);
 
-    console.dir(content);
-
     return (
       <SiteLayout>
         <h1 className="content-h1">About</h1>
