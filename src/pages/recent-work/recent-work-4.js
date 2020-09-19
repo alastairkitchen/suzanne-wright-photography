@@ -7,7 +7,7 @@ import { extractFrontMatterData } from "../../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
 
-  let content = extractFrontMatterData(data.pageData);
+  let content = extractFrontMatterData(data.pageData).imageGallery;
 
   return (
 
@@ -31,7 +31,7 @@ export const query = graphql`
       filter: {
         frontmatter: {
           templateKey: { eq: "recent-work-image-gallery" }
-          url: { eq: "/recent-work/recent-work-2" }
+          url: { eq: "/recent-work/recent-work-4" }
         }
       }
     ) {

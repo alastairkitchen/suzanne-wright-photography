@@ -63,7 +63,7 @@ class ImageGallery extends React.Component {
           <div className="image-grid image-grid--3-col">{imageElements}</div>
         );
       } else {
-        return <p>No images found...</p>;
+        return <div className="site-container"><p>No images found...</p></div>;
       }
     }
 
