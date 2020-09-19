@@ -2,9 +2,10 @@
 templateKey: image-gallery
 title: Portraits
 url: /portraits
+metaDescription: Portraits photography gallery by suzanne wright photographer,
+  Leeds photographer
 date: 2019-03-10T16:35:17.514Z
-description: "Portraits photography gallery by suzanne wright photographer,
-  Leeds photographer "
+description: ""
 coverImage: /images/buildings-perspective.jpg
 imageGallery:
   - image: /images/mountain.jpg
