@@ -3,7 +3,7 @@ templateKey: image-gallery
 title: Commercial
 url: /commercial
 date: 2019-04-14T10:55:23.886Z
-description: "Commerical photography gallery by suzanne wright photographer,
+description: "Commercial photography gallery by suzanne wright photographer,
   Leeds photographer "
 coverImage: /images/mountain.jpg
 imageGallery:
