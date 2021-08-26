@@ -65,7 +65,12 @@ class Header extends React.Component {
               </Link>
             </h2>
             <div className="site-container">
-              <Navigation closeMenu={(this.props.closeMenu)} />
+
+              {this.props.hideNav ? (
+                ''
+              ) : (
+                <Navigation closeMenu={(this.props.closeMenu)} />
+              )}
             </div>
           </div>
         </header>

@@ -7,7 +7,7 @@ import "../../scss/index.scss";
 
 const SiteLayout = (props) => (
   <React.Fragment>
-    <SiteHeader />
+    <SiteHeader hideNav={props.hideNav} />
     <main className="site-main">
       <div className="site-container">
         <div className="site-row">
