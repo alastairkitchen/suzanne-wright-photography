@@ -8,8 +8,11 @@ export default ({ data }) => {
   if (data && data.pages) {
     if (data.pages.edges.length > 0) {
       let pages = [];
+
       data.pages.edges.forEach(edge => {
-        pages.push(edge.node.frontmatter);
+        if (edge.node.frontmatter.displayOnHomepage) {
+          pages.push(edge.node.frontmatter);
+        }
       })
 
       return (
@@ -32,7 +35,7 @@ export const query = graphql`
     pages: allMarkdownRemark(
       filter: {
         frontmatter: {
-          templateKey: { regex: "/(recent-work-page)|(^image-gallery$)|(about-page)|(contact-page)/" }
+          templateKey: { regex: "/(recent-work-page)|(recent-work-image-gallery)|(^image-gallery$)|(about-page)|(contact-page)/" }
         }
       }
     ) {
@@ -46,6 +49,7 @@ export const query = graphql`
             description
             url
             coverImage
+            displayOnHomepage
           }
         }
       }
