@@ -1,27 +1,29 @@
 ---
 templateKey: image-gallery
 title: Portraits
+displayOnHomepage: true
+metaDescription: >-
+  Portraits photography gallery by suzanne wright photographer, Leeds
+  photographer
 url: /portraits
-metaDescription: Portraits photography gallery by suzanne wright photographer,
-  Leeds photographer
 date: 2019-03-10T16:35:17.514Z
-description: ""
+description: ''
 coverImage: /images/buildings-perspective.jpg
 imageGallery:
   - image: /images/mountain.jpg
-    title: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
     type: galleryImage
   - image: /images/car-interior.jpg
-    title: Sit amet, consectetur adipiscing elit, sed
+    title: 'Sit amet, consectetur adipiscing elit, sed'
     type: galleryImage
   - image: /images/buildings-perspective.jpg
-    title: Consectetur adipiscing elit, sed
+    title: 'Consectetur adipiscing elit, sed'
     type: galleryImage
   - image: /images/field-run.jpg
-    title: Adipiscing elit, sed um dolor sit amet, consectetur adipiscing elit, sed
+    title: 'Adipiscing elit, sed um dolor sit amet, consectetur adipiscing elit, sed'
     type: galleryImage
   - image: /images/mountain.jpg
-    title: Ctetur adipiscing elit, sednsectetur adipiscing elit, sed
+    title: 'Ctetur adipiscing elit, sednsectetur adipiscing elit, sed'
     type: galleryImage
   - image: /images/beach-closeup.jpg
     title: test
@@ -162,3 +164,4 @@ imageGallery:
     title: w
     type: galleryImage
 ---
+
