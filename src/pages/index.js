@@ -14,7 +14,7 @@ export default ({ data }) => {
 
       return (
         <SiteLayout>
-          <PageList pages={pages} />
+          <PageList pages={pages} listView="HOME" />
         </SiteLayout>
       )
     }

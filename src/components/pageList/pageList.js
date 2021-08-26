@@ -13,7 +13,7 @@ class PageList extends React.Component {
 
   render() {
     return (
-      <div className="page-list">
+      <div className={`page-list ${this.props.listView === 'HOME' ? "page-list--home" : ""}`}>
         {
           this.props.pages.map((page, i) => {
 
