@@ -19,6 +19,7 @@ collections:
           default: "image-gallery",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -47,6 +48,7 @@ collections:
           default: "recent-work-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
@@ -64,6 +66,7 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Active", name: "active", widget: "boolean", default: true}
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -92,6 +95,7 @@ collections:
           default: "about-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
@@ -110,6 +114,7 @@ collections:
           default: "contact-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
       - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
