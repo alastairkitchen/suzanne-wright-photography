@@ -1,7 +1,7 @@
 ---
 templateKey: recent-work-image-gallery
 title: Recent work 4
-active: true
+active: false
 url: /recent-work/recent-work-4
 metaDescription: 'Recent work gallery by suzanne wright photographer, Leeds photographer'
 date: 2020-09-19T13:49:17.825Z
