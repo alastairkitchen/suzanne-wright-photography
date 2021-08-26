@@ -9,8 +9,12 @@ export default ({ data }) => {
   if (data && data.pages) {
     if (data.pages.edges.length > 0) {
       let pages = [];
+
+
       data.pages.edges.forEach(edge => {
-        pages.push(edge.node.frontmatter);
+        if (edge.node.frontmatter.active) {
+          pages.push(edge.node.frontmatter);
+        }
       })
 
       const pageContent = extractFrontMatterData(data.recentWorkPage);
@@ -51,6 +55,7 @@ export const query = graphql`
             description
             url
             coverImage
+            active
           }
         }
       }
