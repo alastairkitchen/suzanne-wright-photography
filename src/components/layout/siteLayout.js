@@ -11,6 +11,9 @@ const SiteLayout = (props) => (
     <main className="site-main">
       <div className="site-container">
         <div className="site-row">
+          {props.title ? (
+            <h1 className="content-h1">{props.title}</h1>
+          ) : ''}
           {props.children}
         </div>
       </div>

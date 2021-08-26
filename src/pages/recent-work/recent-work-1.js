@@ -12,6 +12,7 @@ const Family = ({ data }) => {
   return (
 
     <SiteLayout
+      title={content.title}
       contentOuter={
         content.imageGallery ? <ImageGallery imageGallery={content.imageGallery} /> : null}
     >

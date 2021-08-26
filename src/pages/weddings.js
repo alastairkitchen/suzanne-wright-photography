@@ -7,12 +7,13 @@ import { extractFrontMatterData } from "../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
 
-  let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
+  let content = extractFrontMatterData(data.pageData);
 
   return (
 
     <SiteLayout
-      contentOuter={<ImageGallery imageGallery={imageGallery} />}
+      title={content.title}
+      contentOuter={<ImageGallery imageGallery={content.imageGallery} />}
     >
 
     </SiteLayout>

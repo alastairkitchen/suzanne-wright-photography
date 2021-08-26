@@ -12,6 +12,7 @@ const Family = ({ data }) => {
   return (
 
     <SiteLayout
+      title={content.title}
       contentOuter={<ImageGallery imageGallery={content.imageGallery} />}
     >
       <div className="site-container">

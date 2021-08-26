@@ -17,13 +17,14 @@ export default ({ data }) => {
         }
       })
 
-      const pageContent = extractFrontMatterData(data.recentWorkPage);
+      const content = extractFrontMatterData(data.recentWorkPage);
 
       return (
-        <SiteLayout>
-          <h1 className="content-h1">Recent work</h1>
-          {pageContent.description &&
-            <p>{pageContent.description}</p>
+        <SiteLayout
+          title={content.title}
+        >
+          {content.description &&
+            <p>{content.description}</p>
           }
           <PageList pages={pages} />
         </SiteLayout>
