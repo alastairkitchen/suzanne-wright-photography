@@ -9,8 +9,6 @@ const Family = ({ data }) => {
 
   let content = extractFrontMatterData(data.pageData);
 
-  console.dir(content);
-
   return (
 
     <SiteLayout

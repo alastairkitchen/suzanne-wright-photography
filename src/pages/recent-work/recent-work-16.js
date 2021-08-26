@@ -7,7 +7,7 @@ import { extractFrontMatterData } from "../../utils/graphqlUtil.js";
 
 const Family = ({ data }) => {
 
-  let content = extractFrontMatterData(data.pageData).imageGallery;
+  let content = extractFrontMatterData(data.pageData);
 
   return (
 
