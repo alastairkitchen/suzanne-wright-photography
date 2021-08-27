@@ -13,9 +13,11 @@ const Family = ({ data }) => {
 
     <SiteLayout
       title={content.title}
-      contentOuter={<ImageGallery imageGallery={content.imageGallery} />}
     >
-
+      <div>
+        {content.content ? (<p className="site-main__description">{content.description}</p>) : ''}
+        <ImageGallery imageGallery={content.imageGallery} />
+      </div>
     </SiteLayout>
   );
 };

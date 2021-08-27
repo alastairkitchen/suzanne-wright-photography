@@ -4,6 +4,7 @@ import SiteLayout from "../../components/layout/siteLayout";
 import ImageGallery from "../../components/imageGallery/imageGallery";
 // utils
 import { extractFrontMatterData } from "../../utils/graphqlUtil.js";
+import { URL } from '../../utils/urlConstants';
 
 const Family = ({ data }) => {
 
@@ -12,12 +13,12 @@ const Family = ({ data }) => {
   return (
 
     <SiteLayout
-      contentOuter={<ImageGallery imageGallery={content.imageGallery} />}
+      title={content.title}
+      backLink={URL.RECENT_WORK}
     >
-      <div className="site-container">
-        <div className="site-row">
-          <p className="site-main__description">{extractFrontMatterData(data.pageData).description}</p>
-        </div>
+      <div>
+        {content.description ? (<p className="site-main__description">{content.description}</p>) : ''}
+        <ImageGallery imageGallery={content.imageGallery} />
       </div>
     </SiteLayout>
   );

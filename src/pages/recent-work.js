@@ -19,14 +19,16 @@ export default ({ data }) => {
 
       const content = extractFrontMatterData(data.recentWorkPage);
 
+      console.dir(content);
+
       return (
         <SiteLayout
           title={content.title}
         >
-          {content.description &&
-            <p>{content.description}</p>
-          }
-          <PageList pages={pages} />
+          <div>
+            {content.description ? (<p className="site-main__description">{content.description}</p>) : ''}
+            <PageList pages={pages} />
+          </div>
         </SiteLayout>
       )
     }

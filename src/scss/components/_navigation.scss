@@ -35,7 +35,7 @@
 // Media queries
 // ----------------------------------------
 
-@include mq($from: screen740) {
+@include mq($from: screen980) {
   .navigation {
     display: flex;
     justify-content: center;
