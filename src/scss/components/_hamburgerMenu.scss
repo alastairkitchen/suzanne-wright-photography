@@ -2,13 +2,15 @@
 // Hamburger menu
 // ----------------------------------------
 
-$bar-width: 35px;
-$bar-height: 4px;
-$bar-spacing: 12px;
+$bar-width: 25px;
+$bar-height: 1px;
+$bar-spacing: 8px;
 
 .hamburger-wrapper {
-  width: 35px;
-  height: 27px;
+  width: 25px;
+  height: 1px;
+  left: 20px;
+  top: 20px;
   position: absolute;
 }
 

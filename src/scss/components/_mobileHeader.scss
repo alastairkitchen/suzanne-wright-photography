@@ -6,20 +6,31 @@
   display: block;
   text-align: center;
   padding: 0 20px;
-  transform: translatex(0); // menu open animation
-  transition: transform $menu-transition ease; // menu open animation
+  height: 50px;
+  padding-top: 15px;
 }
 
-.mobile-header__close-bg {
-  opacity: 0;
-  transition: opacity $menu-transition 0.2s ease;
+.mobile-header__title{
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+
+  span {
+    font-size: 12px;
+    display: block;
+  }
+}
+
+.mobile-header__logo {
+  width: 170px;
+  margin-top: -2px;
 }
 
 // ----------------------------------------
 // Media queries
 // ----------------------------------------
 
-@include mq($from: screen740) {
+@include mq($from: screen980) {
   .mobile-header {
     display: none;
   }

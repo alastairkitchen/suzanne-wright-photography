@@ -1,0 +1,31 @@
+.back-link {
+	color: black;
+	font-weight: lighter;
+	font-size: 18px;
+
+	svg {
+		height: 0.75em;
+	}
+}
+
+.site-main {
+
+	.back-link {
+		@extend .back-link;
+	}
+}
+
+
+// quick fix, nasty selectors fix later
+.site-container > .site-row > .back-link {
+	margin-bottom: 5vh;
+	display: block;
+}
+
+@include mq($from: screen740) {
+	.site-container > .site-row > .back-link {
+		margin-bottom: 0;
+		display: inline-block;
+	}
+}
+//----------- nasty end

@@ -5,13 +5,23 @@
 $white: #ffffff;
 $black: #000000;
 $lightGrey: #f5f5f5;
-$darkGrey: #414141;
+$darkGrey: #171717;
 $darkGreyAlt: #2b2b2b;
+$lightYellow: #f6f7d8;
+$greyBlue: #435161;
+$greyBlueHover: #dae0e8;
 
-$menu-transition: 0.5s;
+$darkGreyFade: rgba(0, 0, 0, 0.40);
 
 // fonts
-$font-weight-light: 400;
-$font-weight-regular: 500;
-$font-weight-bold: 700;
-$font-weight-xbold: 800;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 500;
+
+$site-width: 1200px;
+
+$gutters: (
+	"mobile": 25px,
+	"desktop": 20px,
+	"desktop-large": 30px
+);

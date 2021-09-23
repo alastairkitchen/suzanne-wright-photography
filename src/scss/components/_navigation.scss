@@ -4,17 +4,26 @@
 
 .navigation {
   list-style: none;
-  padding-left: 40px;
-  text-align: left;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  padding: 0;
 }
 
 .navigation__list {
-  padding: 8px 0;
+  padding: 20px 15px;
 
   a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     color: $darkGrey;
+    padding-bottom: 15px;
+  }
+}
+
+.navigation__list-active {
+  a {
+    font-weight: $font-weight-bold;
   }
 }
 
@@ -26,15 +35,37 @@
 // Media queries
 // ----------------------------------------
 
-@include mq($from: screen740) {
+@include mq($from: screen980) {
   .navigation {
-    text-align: center;
-    padding-left: 0;
     display: flex;
     justify-content: center;
   }
 
   .navigation__list {
     margin: 0 5px;
+    padding: 20px 15px;
+
+    a {
+      font-size: 18px;
+      border-bottom: none;
+      position: relative;
+
+      &:after {
+        @include hoverBorder($darkGreyFade);
+      }
+
+      &:hover {
+        &:after {
+          @include hoverBorderHovered;
+        }
+      }
+    }
+  }
+
+  .navigation__list-active {
+    a {
+      border-bottom: 1px solid $black;
+      font-weight: $font-weight-bold;
+    }
   }
 }

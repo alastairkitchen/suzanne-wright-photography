@@ -1,14 +1,28 @@
 import React from "react";
-
-import SiteHeader from "../header";
-import Footer from "../footer";
+import { Link } from 'gatsby';
+import SiteHeader from "../header/header";
+import Footer from "../footer/footer";
+import ChevronLeftIcon from "../../assets/svg/chevron-left.inline.svg";
 
 import "../../scss/index.scss";
 
-const SiteLayout = ({ children, counter, increment }) => (
+const SiteLayout = (props) => (
   <React.Fragment>
-    <SiteHeader />
-    <main className="site-main">{children}</main>
+    <SiteHeader hideNav={props.hideNav} />
+    <main className="site-main">
+      <div className="site-container">
+        <div className="site-row">
+          {props.backLink ? (
+            <Link className='back-link' to={props.backLink}><ChevronLeftIcon /> Back</Link>
+          ) : ''}
+          {props.title ? (
+            <h1 className="content-h1">{props.title}</h1>
+          ) : ''}
+          {props.children}
+        </div>
+      </div>
+    </main>
+    {props.contentOuter}
     <Footer />
   </React.Fragment>
 );

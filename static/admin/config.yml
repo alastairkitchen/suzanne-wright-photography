@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/images
+public_folder: /images
 
 collections:
   - name: "gallery"
@@ -19,11 +19,105 @@ collections:
           default: "image-gallery",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
       - label: "Gallery"
-        name: "galleryImages"
+        name: "imageGallery"
         widget: "list"
-        field: { label: Image, name: image, widget: image }
+        types:
+        - label: "Gallery Image"
+          name: "galleryImage"
+          widget: object
+          fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Title, name: title, widget: text  }
+  - name: "recent-work"
+    label: "Recent Work"
+    folder: "src/content/recent-work"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "recent-work-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+  - name: "recent-work-gallery"
+    label: "Recent Work Gallery"
+    folder: "src/recentWorkImageGalleries"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "recent-work-image-gallery",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Active", name: "active", widget: "boolean", default: true}
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Cover Image", name: "coverImage", widget: "image" }
+      - label: "Gallery"
+        name: "imageGallery"
+        widget: "list"
+        types:
+        - label: "Gallery Image"
+          name: "galleryImage"
+          widget: object
+          fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Title, name: title, widget: text  }
+  - name: "about"
+    label: "About"
+    folder: "src/content/about"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "about-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Main Content", name: "mainContent", widget: "markdown" }
+      - { label: "Main Image", name: "mainImage", widget: "image", required: false }
+  - name: "contact"
+    label: "Contact"
+    folder: "src/content/contact"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "contact-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display On Homepage", name: "displayOnHomepage", widget: "boolean", default: false}
+      - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Main Content", name: "mainContent", widget: "markdown" }
+      - { label: "Main Pricing", name: "mainPricing", widget: "markdown", required: false }
+  

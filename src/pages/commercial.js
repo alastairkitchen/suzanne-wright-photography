@@ -1,36 +1,29 @@
 import React from "react";
+import { graphql } from 'gatsby';
 import SiteLayout from "../components/layout/siteLayout";
 import ImageGallery from "../components/imageGallery/imageGallery";
+// utils
+import { extractFrontMatterData } from "../utils/graphqlUtil.js";
 
-const Commercial = ({ data }) => {
+const Family = ({ data }) => {
+
+  let imageGallery = extractFrontMatterData(data.pageData).imageGallery;
+
   return (
-    <SiteLayout>
-      <ImageGallery {...data} />
+
+    <SiteLayout
+      contentOuter={<ImageGallery imageGallery={imageGallery} />}
+    >
+
     </SiteLayout>
   );
 };
 
-export default Commercial;
+export default Family;
 
 export const query = graphql`
   query {
-    allImages: allFile(
-      filter: { extension: { regex: "/(jpg)|(png)|(gif)|(jpeg)/" } }
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid(maxWidth: 600, maxHeight: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-    galleryImages: allMarkdownRemark(
+    pageData: allMarkdownRemark(
       filter: {
         frontmatter: {
           templateKey: { eq: "image-gallery" }
@@ -46,7 +39,10 @@ export const query = graphql`
             templateKey
             date
             description
-            galleryImages
+            imageGallery {
+              image
+              title
+            }
             url
             coverImage
           }

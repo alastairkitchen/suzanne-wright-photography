@@ -5,7 +5,8 @@
 html {
   height: 100%;
   max-width: 100%;
-  font-family: "Muli", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -14,4 +15,76 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.site-container {
+  margin: 0 auto;
+  max-width: $site-width;
+}
+
+.site-row {
+  padding: map-get($gutters, 'mobile');
+}
+
+.site-main__description {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.content-h1 {
+  font-weight: $font-weight-bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.site-main {
+
+  p, li {
+    line-height: 1.6;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: $black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border .2s ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  ul {
+    padding: 0;
+    padding-left: 20px;
+  }
+}
+
+/*
+ * Modifiers
+ */
+
+.content--align-left {
+  text-align: left;
+}
+
+/*
+ * Media queries
+ */
+
+@include mq($from: screen740) {
+  .content-h1 {
+    margin-bottom: 50px;
+  }
+
+  .site-row {
+    padding: map-get($gutters, 'desktop');
+  }
 }

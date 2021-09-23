@@ -1,0 +1,128 @@
+// ----------------------------------------
+// Image grid
+// ----------------------------------------
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $site-width;
+  margin: 0 -10px;
+  //padding: 0 15px;
+}
+
+.image-grid__button {
+  width: 100%;
+  padding-bottom: 100%;
+  -webkit-appearance: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color .4s;
+    background-color: rgba(0,0,0,0.55);
+    z-index: 1;
+  }
+}
+
+.image-grid__image {
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.image-grid__ui {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: $lightGrey;
+  font-size: 12px;
+}
+
+.image-grid__ui-item {
+  margin-bottom: 0;
+}
+
+.image-grid__inner {
+  padding: 0 5px;
+  margin-bottom: 0;
+}
+
+// ----------------------------------------
+// Modifiers
+// ----------------------------------------
+
+// 3 column
+
+.image-grid--3-col {
+  .image-grid__column {
+    width: 50%;
+  }
+}
+
+// ----------------------------------------
+// Media queries
+// ----------------------------------------
+
+@include mq($from: screen400) {
+
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 33.3333333%;
+    }
+  }
+}
+
+@include mq($from: screen980) {
+  .image-grid--3-col {
+    .image-grid__column {
+      width: 33.333%;
+    }
+  }
+
+  .image-grid__ui-item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform .4s ease-in-out, opacity .6s ease-in-out;
+  }
+
+  .image-grid__inner {
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .image-grid__button {
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .image-grid__button:hover {
+
+    &:before {
+      background-color: rgba(0,0,0,0.55);
+    }
+  
+    .image-grid__ui-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

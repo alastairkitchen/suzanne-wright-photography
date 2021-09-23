@@ -1,34 +1,43 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SiteLayout from "../components/layout/siteLayout";
-import PageListItem from "../components/pageListItem/pageListItem";
-
-const pageListItems = data => {
-  if (data && data.allMarkdownRemark) {
-    if (data.allMarkdownRemark.edges.length > 0) {
-      let pageData = data.allMarkdownRemark.edges;
-      let items = pageData.map((page, i) => {
-        return <PageListItem key={i} {...page.node.frontmatter} />;
-      });
-      return items;
-    }
-  }
-};
+import PageList from "../components/pageList/pageList";
 
 export default ({ data }) => {
-  console.dir(data);
+
+  if (data && data.pages) {
+    if (data.pages.edges.length > 0) {
+      let pages = [];
+
+      data.pages.edges.forEach(edge => {
+        if (edge.node.frontmatter.displayOnHomepage) {
+          pages.push(edge.node.frontmatter);
+        }
+      })
+
+      return (
+        <SiteLayout>
+          <PageList pages={pages} listView="HOME" />
+        </SiteLayout>
+      )
+    }
+  }
+
   return (
-    <SiteLayout>
-      <ul className="page-list-items">{pageListItems(data)}</ul>
-      Hi Swaz =)
-    </SiteLayout>
-  );
+    <p>error getting pages</p>
+  )
 };
+
+//hideHome: {ne: true}
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "image-gallery" } } }
+    pages: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { regex: "/(recent-work-page)|(recent-work-image-gallery)|(^image-gallery$)|(about-page)|(contact-page)/" }
+        }
+      }
     ) {
       edges {
         node {
@@ -38,10 +47,9 @@ export const query = graphql`
             templateKey
             date
             description
-            galleryImages
             url
             coverImage
-            _PARENT
+            displayOnHomepage
           }
         }
       }
